@@ -1,0 +1,4120 @@
+/*
+Template Name: Sleek HTML5 and Bootstrap 4 Admin templete
+Author:  Adam Abdulrahman
+Author URI:
+Version: 1.0
+
+*/
+
+
+/*@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900');*/
+
+
+/* ======= General Rules ======== */
+
+@font-face {
+  font-family: 'Geometric 212 Book Condensed BT';
+  src: url('../webfonts/geometric-212-book-condensed-bt.ttf') format('truetype');
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: Quicksand, 'Trebuchet MS', Arial, sans-serif; */
+  /*font-family: 'Geometric 212 Book Condensed BT' !important;*/
+  background-color: #F8FAFD;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h2 {
+  font-size: 24px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+
+
+p {
+  margin-bottom: 5px;
+  line-height: 19px !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a,
+a:link,
+a:hover {
+  color: #333;
+}
+
+label,
+input,
+textarea{
+  color: #5c5c5c;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+input,
+textarea {
+
+  outline: 0 !important;
+  -webkit-appearance: none;
+  font-size: 14px !important;
+}
+
+
+/* Modificacion select agregar icono EAM */
+
+.icon-select:before {
+  content: '\f0dd';
+  font-family: FontAwesome !important;
+  position: absolute;
+  right: 16px;
+  width: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  color: #4b4b4b;
+  text-align: center;
+  pointer-events: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.icon-select2:before {
+  content: '\f0dd';
+  font-family: FontAwesome !important;
+  position: absolute;
+  right: 30px;
+  top: 60%;
+  transform: translateY(-60%);
+  color: #4b4b4b;
+  text-align: center;
+  pointer-events: none;
+}
+
+.icon-select3:before {
+  content: '\f0dd';
+  font-family: FontAwesome !important;
+  position: absolute;
+  right: 30px;
+  top: 70%;
+  transform: translateY(-70%);
+  color: #4b4b4b;
+  text-align: center;
+  pointer-events: none;
+}
+
+
+/* Fin Modificacion select agregar icono EAM */
+
+
+button:focus {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+input,
+input:focus,
+textarea,
+textarea:focus {
+  outline: 0 !important;
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+input[type=checkbox],
+input[type=checkbox]:focus,
+input[type=radio],
+input[type=radio]:focus {
+  outline: 1px !important;
+  -webkit-appearance: checkbox !important;
+}
+
+table {
+  color: #555;
+}
+
+table thead tr,
+table tbody tr,
+table tfoot tr {
+  padding: 0;
+  margin: 0;
+  line-height: 23px;
+}
+
+table tbody tr td {
+  margin: 0px;
+}
+
+table tbody tr td {
+  font-size: 13px;
+  font-weight: 500;
+}
+table thead tr th {
+  font-size: 13px;
+}
+
+.border-left-primary-4 {
+  border-left: 4px solid #007BFF;
+}
+
+.bg-dark-blue {
+  background: #3A5276;
+}
+
+.bg-light-blue {
+  background: #799CC7;
+}
+
+.bg-red {
+  background: #EA5941;
+}
+
+.bg-green {
+  color: #4CC790;
+}
+
+.bg-theme {
+  background: #080808;
+}
+
+
+/*======= General Rules =========*/
+
+
+/*====== Dasboard CSS Rules =====*/
+
+
+/*Loader CSS */
+
+.loader-wrapper {
+  position: fixed;
+  z-index: 9999;
+  background: #fff;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 0 5px #9b0009;
+  overflow: hidden;
+}
+
+.loader-wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #9b0009;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+}
+
+.loader-wave:before,
+.loader-wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.loader-wave:before {
+  border-radius: 45%;
+  background: rgba(255, 255, 255, 1);
+  animation: animate 5s linear infinite;
+  -webkit-animation: animate 5s linear infinite;
+  -ms-animation: animate 5s linear infinite;
+  -moz-animation: animate 5s linear infinite;
+}
+
+.loader-wave:after {
+  border-radius: 40%;
+  background: rgba(255, 255, 255, .5);
+  animation: animate 10s linear infinite;
+  -webkit-animation: animate 10s linear infinite;
+  -ms-animation: animate 10s linear infinite;
+  -moz-animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg)
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg)
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg)
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg)
+  }
+}
+
+
+/*Header CSS */
+
+.header {
+  background: #fff;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 500;
+  color: #fff !important;
+}
+
+.logo a:hover {
+  color: #fff !important;
+}
+
+.logo span.small {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.search-box {
+  border-radius: 50px;
+}
+
+.search-box {
+  display: inline-block;
+  width: 200px;
+  transition: 500ms !important;
+}
+
+.search-box:focus {
+  width: 240px;
+}
+
+.flex-header-menu,
+.flex-social {
+  display: flex;
+}
+
+.mt-13 {
+  margin-top: 13px;
+}
+
+.dropdown-menu.mt-10 {
+  margin-top: 0.1rem !important;
+}
+
+.menu-icon {
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  margin: 5px 15px 0px 10px;
+  cursor: pointer;
+}
+
+.menu-icon:first-child {
+  margin: 5px 15px 0px 0px;
+  color: #898989;
+}
+
+.menu-icon:last-child {
+  margin-right: 0px;
+}
+
+.menu-icon .badge {
+  position: absolute;
+  border-radius: 30px;
+  top: -7px;
+  left: 10px;
+  /*
+  transition: 300ms;
+  animation: myAnim 2s infinite;
+  -webkit-animation: myAnim 300ms infinite;
+  -moz-animation: myAnim 300ms infinite;
+  */
+}
+
+.menu-icon:hover .badge {
+  top: -7px;
+  left: 7px;
+}
+
+@keyframes myAnim {
+  from {
+    top: -5px;
+    left: 5px
+  }
+  to {
+    top: -7px;
+    left: 7px
+  }
+}
+
+.menu-icon #sidebar-toggle-btn:before {
+  content: '\f0c9';
+  font-family: FontAwesome !important;
+  display: inline-block;
+  color: #898989;
+  transition: 300ms;
+}
+
+.menu-icon #sidebar-toggle-btn.slide-in:before {
+  content: '\f00d';
+  font-family: FontAwesome !important;
+  display: inline-block;
+  color: #898989;
+  font-size: 18px;
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown.dropdown-left {
+  left: -10px !important;
+}
+
+.dropdown.dropdown-right {
+  right: -10px !important;
+}
+
+.dropdown-item media .media-body>h6,
+p,
+small {
+  line-height: 8px;
+}
+
+.media-body h6 {
+  margin-bottom: 3px;
+}
+
+.media-body p {
+  font-size: 13px !important;
+  margin-bottom: 0px;
+}
+
+.link-all {
+  font-weight: bold;
+  color: #7c68685e;
+}
+
+.notify-icon {
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.notify-icon i {
+  color: #fff;
+  margin-top: 13px;
+}
+
+.notify-icon_2 {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.notify-icon_2 i {
+  color: #fff;
+  margin-top: 0px;
+  font-size: 60px;
+}
+
+
+/* Modificaciones input busqueda y resultados de busqueda EAM */
+
+#resultadoBusqueda {
+  position: absolute;
+  background: #4b4b4b;
+  right: 0;
+  z-index: 1000;
+}
+
+
+/*
+#resultadoBusqueda:before{
+content: '';
+position: absolute;
+width: 15px;
+height: 15px;
+background: #4b4b4b;
+top: -8px;
+transform: rotate(45deg);
+z-index: -1;
+}*/
+
+.sugerencias:hover {
+  background: transparent !important;
+}
+
+.sugerencias {
+  padding: 5px;
+  position: relative;
+}
+
+.sugerencias:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: #898989;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: .5s;
+}
+
+.sugerencias:hover:before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.sugerencias a {
+  color: white;
+  z-index: 1;
+}
+
+
+/* Fin Modificaciones input busqueda y resultados EAM*/
+
+
+/* Main Content */
+
+.main-content {
+  position: relative;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+  height: auto;
+  min-height: 100vh;
+  transition: 200ms;
+}
+
+.sidebar>.inner-sidebar {
+  height: 100%;
+  background: #4b4b4b;
+}
+
+.avatar img {
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border: 3px solid #fff;
+}
+
+.avatar>p {
+  color: #fff;
+  font-size: 11px;
+}
+
+.avatar span.small {
+  font-size: 8px;
+}
+
+.sidebar-menu {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  position: relative !important;
+  display: block;
+  border-bottom: 1px solid #898989;
+}
+
+.sidebar-menu li:first-child {
+  border-top: 1px solid #898989;
+}
+
+.sidebar-menu li a {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  padding: 13px 20px;
+  transition: 300ms;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-menu li a:hover {
+  padding-left: 30px;
+}
+
+
+/* Modificacion efecto hover li EAM Seccion Sidebar*/
+
+.sidebar-menu li a:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: #333333;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: .5s;
+}
+
+.sidebar-menu li a:hover:before {
+  width: 100%;
+}
+
+
+/* Fin Modificacion efecto hover li EAM Seccion Sidebar*/
+
+.sidebar-menu li ul {
+  width: 100%;
+  height: auto;
+  background: #898989;
+  display: none;
+}
+
+.sidebar-menu li ul li {
+  border: 0px;
+}
+
+
+/* Style for toggling sidebar width */
+
+.sidebar.shrink-sidebar {
+  max-width: 85px !important;
+  min-width: 85px !important;
+}
+
+.sidebar.shrink-sidebar .avatar img {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar.shrink-sidebar .avatar p,
+.sidebar.shrink-sidebar .avatar span.small {
+  display: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li {
+  position: relative !important;
+  border-bottom: 1px solid #898989;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li a {
+  padding-top: 10px;
+  /* pointer-events: none;*/
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li a:hover {
+  padding-left: 15px;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li a span.none {
+  display: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li ul {
+  position: absolute;
+  z-index: 1000;
+  top: 0px;
+  left: 50px;
+  width: 270px !important;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li:hover ul {
+  display: block;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li ul li {
+  border-bottom: 1px solid #4b4b4b;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li ul li:last-child {
+  border-bottom: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li:hover ul li a {
+  padding-left: 2px;
+}
+
+
+/* Style for toggling sidebar width */
+
+
+/* Sidebar */
+
+
+/* Content */
+
+.content {
+  transition: 200ms;
+}
+
+.content.expand-content {
+  min-width: 92%;
+}
+
+.card-main {
+  display: flex;
+}
+
+.panel-head-success {
+  border-top: 4px solid #29A744;
+}
+
+.panel-head-primary {
+  border-top: 4px solid #0073AA;
+}
+
+.panel-head-danger {
+  border-top: 4px solid #ED6A5A;
+}
+
+.panel-head-warning {
+  border-top: 4px solid #F1C40F;
+}
+
+.panel-head-info {
+  border-top: 4px solid #169DB2;
+}
+
+.card-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 15px;
+}
+
+.card-loader {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: #555;
+}
+
+.card-sales {
+  border-radius: 50%;
+  border-right: 10px solid #169DB2;
+  border-left: 10px solid #efefef;
+  border-top: 10px solid #efefef;
+  border-bottom: 10px solid #efefef;
+}
+
+.card-users {
+  border-radius: 50%;
+  border-right: 10px solid #efefef;
+  border-left: 10px solid #F1C40F;
+  border-top: 10px solid #F1C40F;
+  border-bottom: 10px solid #efefef;
+}
+
+.card-session {
+  border-radius: 50%;
+  border-right: 10px solid #efefef;
+  border-left: 10px solid #898989;
+  border-top: 10px solid #898989;
+  border-bottom: 10px solid #898989;
+}
+
+.card-views {
+  border-radius: 50%;
+  border-right: 10px solid #efefef;
+  border-left: 10px solid #ED6A5A;
+  border-top: 10px solid #efefef;
+  border-bottom: 10px solid #efefef;
+}
+
+.info h2 {
+  color: #898989;
+  font-weight: 400;
+}
+
+.info span {
+  color: #666;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.card-greet {
+  margin-bottom: 0px;
+}
+
+.card-notice {
+  font-weight: 500;
+  color: #efefef;
+  font-size: 14px;
+}
+
+.media-body p.message {
+  line-height: 17px;
+}
+
+.sent {
+  font-size: 13px;
+  color: #efefef;
+}
+
+.user-about h4,
+.user-about p {
+  color: #555;
+  font-weight: 500;
+}
+
+.p-space {
+  line-height: 25px;
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+}
+
+.flex-social {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+}
+
+.flex-social a {
+  display: inline-block;
+}
+
+#chartContainer {
+  height: 360px;
+}
+
+.calendar-box {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.calendar .table {
+  margin-bottom: 10px !important;
+}
+
+.visualmonthyear {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.time h6 {
+  color: #505050;
+  font-size: 15px;
+}
+
+.time .badge {
+  border-radius: 30px;
+  padding: 5px;
+}
+
+#myChart {
+  height: 270px !important;
+}
+
+.ct-label.ct-horizontal.ct-end,
+.ct-label.ct-vertical.ct-start {
+  color: #333 !important;
+  font-weight: bold !important;
+}
+
+.footer span,
+footer>span,
+a {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+
+/* Content */
+
+
+/* Dashboard 3 Content */
+
+.fb-widget-top-desc h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0px !important;
+}
+
+.fb-widget-bottom p small {
+  font-weight: 500 !important;
+  font-size: 11px;
+}
+
+.fb-widget-bottom h5 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 2px !important;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.orange .circle {
+  stroke: #ff9f00;
+}
+
+.circular-chart.green .circle {
+  stroke: #4CC790;
+}
+
+.circular-chart.blue .circle {
+  stroke: #3c9ee5;
+}
+
+.circular-chart.red .circle {
+  stroke: #EA5941;
+}
+
+.circular-chart.theme .circle {
+  stroke: #9b0009;
+}
+
+.percentage {
+  fill: #666;
+  font-family: FontAwesome;
+  font-size: 0.3em;
+  text-anchor: middle;
+}
+
+.text-green {
+  color: rgb(29, 145, 93);
+}
+
+.bg-green {
+  background: rgb(29, 145, 93);
+  color: #fff;
+}
+
+.custom-card {
+  font-weight: 500;
+  transition: .5s;
+}
+
+
+/* Modificacion cards seccion home.php de modulo Inventario Ventas */
+
+.custom-card:hover {
+  transform: scale(.8);
+}
+
+.custom-card .shadow:hover {
+  box-shadow: 0px 0px 10px 0 rgba(155, 0, 9, .8) !important;
+}
+
+.custom-card h5,
+.custom-card h5 small {
+  font-weight: 500;
+  color: #5c5c5c;
+}
+
+.custom-card h5 {
+  margin-bottom: 0px !important;
+}
+
+
+/* Fin Modificacion cards seccion home.php de modulo Inventario Ventas */
+
+
+/* Modificacion h1 Marca de carros seccion home.php EAM */
+
+.custom-card h1 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+/* Fin Modificacion h1 Marca de carros seccion home.php EAM */
+
+.custom-card h2 {
+  color: #5c5c5c;
+}
+
+.custom-card img {
+  filter: grayscale(1);
+}
+
+.custom-card:hover img {
+  filter: grayscale(0);
+}
+
+
+/* Dashboard One CSS Rules*/
+
+.customer-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #9b0009;
+  box-shadow: 0px 0px 0px 3px #ccc;
+  border-radius: 50%;
+  margin-left: -1rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.customer-circle.end {
+  top: -.9rem;
+}
+
+
+/*Main Content */
+
+
+/*====== Dasboard CSS Rules =====*/
+
+
+/*=======Buttons Page CSS Rules === */
+
+.button-container {
+  line-height: 45px;
+}
+
+.button-container.lh-sm {
+  line-height: 20px !important;
+}
+
+.button-container h6,
+.bc-header {
+  font-size: 18px;
+  color: #5c5c5c;
+  font-weight: 500;
+}
+
+.bc-header-small {
+  font-size: 16px;
+  color: #5c5c5c;
+  font-weight: 500;
+}
+
+.button-container p,
+.bc-description {
+  font-weight: 500;
+  font-size: 14px;
+  color: #5c5c5c;
+}
+
+.btn-round {
+  border-radius: 50px;
+}
+
+.icon-round {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+/*======== Accordion CSS Rules ========== */
+
+.accordion-header {
+  padding: 0px !important;
+  margin: 0px;
+}
+
+.panel-title>button {
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left !important;
+  background: #9b0009;
+  border-radius: 0px;
+  padding: 8px;
+  color: #fff;
+}
+
+.panel-title>button.collapsed {
+  background: #F7F7F7;
+  color: #5c5c5c;
+}
+
+.panel-title>button:hover {
+  background: #9b0009;
+  color: #fff;
+}
+
+.accordion-btn:visited,
+.accordion-btn:focus,
+.accordion-btn:hover {
+  text-decoration: none;
+}
+
+.accordion-body p {
+  line-height: 23px !important;
+}
+
+.panel-title>button:before {
+  float: right !important;
+  font-family: FontAwesome;
+  content: "\f068";
+  padding-right: 5px;
+}
+
+.panel-title>button.collapsed:before {
+  float: right !important;
+  content: "\f067";
+}
+
+
+/* Accordion style 2 */
+
+.panel-title-2>button {
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left !important;
+  background: #ED6A5A;
+  border-radius: 0px;
+  padding: 8px;
+  color: #fff;
+}
+
+.panel-title-2>button.collapsed {
+  background: #F7F7F7;
+  color: #5c5c5c;
+}
+
+.panel-title-2>button:hover {
+  background: #ED6A5A;
+  color: #fff;
+}
+
+.panel-title-2>button:hover {
+  background: #ED6A5A;
+  color: #fff;
+}
+
+.panel-title-2>button:before {
+  float: left !important;
+  font-family: FontAwesome;
+  content: "\f101";
+  padding-right: 15px;
+}
+
+.panel-title-2>button.collapsed:before {
+  float: left !important;
+  content: "\f103";
+}
+
+
+/* Accordion style 3 */
+
+.panel-title-3>button {
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left !important;
+  background: #29A744;
+  border-radius: 0px;
+  padding: 8px;
+  color: #fff;
+}
+
+.panel-title-3>button.collapsed {
+  background: #F7F7F7;
+  color: #5c5c5c;
+}
+
+.panel-title-3>button:hover {
+  background: #29A744;
+  color: #fff;
+}
+
+.panel-title-3>button:hover {
+  background: #29A744;
+  color: #fff;
+}
+
+.panel-title-3>button:before {
+  float: left !important;
+  font-family: FontAwesome;
+  content: "\f105";
+  padding-right: 15px;
+}
+
+.panel-title-3>button.collapsed:before {
+  float: left !important;
+  content: "\f107";
+}
+
+
+/* ===========Accordion Css Rules =======*/
+
+
+/* ====== Breadcrub rules ===========*/
+
+.b-colored li,
+.b-colored li a {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.b-colored .breadcrumb-item+.breadcrumb-item::before {
+  color: #fff;
+}
+
+.breadcrumb-arrow .breadcrumb-item+.breadcrumb-item::before {
+  content: '\f101';
+  font-family: FontAwesome;
+  font-weight: bold;
+}
+
+
+/* ====== Breadcrub rules ===========*/
+
+
+/*=========Tab CSS rules ============*/
+
+
+/* .custom-tabs class 1 */
+
+.custom-tabs {
+  color: #5c5c5c;
+}
+
+.custom-tabs .nav-tabs .nav-item.show .nav-link,
+.custom-tabs .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-color: transparent transparent #9b0009;
+  border-bottom: 4px solid #9b0009 !important;
+  font-weight: 500;
+}
+
+.custom-tabs .nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.custom-tabs .nav-tabs .nav-link:hover {
+  border: 1px solid transparent;
+}
+
+
+/* .custom-tabs class 1 */
+
+
+/* .custom-tabs class 2 */
+
+.custom-tabs-2 .nav-tabs .nav-item.show .nav-link,
+.custom-tabs-2 .nav-tabs .nav-link.active {
+  background-color: #007BFF;
+  border: 1px solid #007BFF !important;
+  font-weight: 500;
+  color: #fff;
+  padding: 0rem !important;
+}
+
+.custom-tabs .nav-tabs .nav-link,
+.custom-tabs-2 .nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  padding: 0rem !important;
+}
+
+
+/* custom-tabs class 2 */
+
+#tabs {
+  background: #007b5e;
+  color: #eee;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+#tabs .nav-tabs .nav-link.active {
+  color: #f3f3f3;
+  background-color: transparent;
+  border-color: transparent transparent #f3f3f3;
+  border-bottom: 4px solid !important;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+#tabs .nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  color: #eee;
+  font-size: 17px;
+}
+
+.tab-content-border {
+  border-width: 0px 1px 1px 1px;
+  border-color: #dee2e6;
+  border-style: solid;
+}
+
+.tab-content-border .tab-pane p,
+.tab-pane p,
+.media-text {
+  font-size: 14px !important;
+  line-height: 25px !important;
+}
+
+.nav-pills .nav-link {
+  padding: 0rem .9rem;
+  text-align: center;
+}
+
+
+/*=========Tab CSS rules ============*/
+
+
+/*======== Typography CSS Rules ======= */
+
+.p-typo {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 25px !important;
+}
+
+.list-typo li {
+  line-height: 25px !important;
+}
+
+
+/*======Typography CSS Rules =======*/
+
+
+/*======Icons CSS Rules =======*/
+
+.icons-list div {
+  font-size: 14px;
+  color: #5c5c5c;
+  font-weight: 500;
+}
+
+.icons-list div i {
+  font-size: 15px;
+  padding-right: 10px;
+  transition: 100ms;
+}
+
+.icons-list div:hover i {
+  font-size: 28px;
+}
+
+
+/*======Icons CSS Rules =======*/
+
+
+/*=========Notification CSS Rules === */
+
+.ajs-message.ajs-custom {
+  color: #fff !important;
+  background-color: #9b0009 !important;
+  border-color: #9b0009 !important;
+}
+
+.ajs-message.ajs-custom:before {
+  content: '\f1d7';
+  font-family: FontAwesome;
+  margin-right: 10px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.ajs-message.ajs-success {
+  color: #fff !important;
+  background-color: #29A744 !important;
+  border-color: #29A744 !important;
+  font-size: 14px;
+}
+
+.ajs-message.ajs-success:before {
+  content: '\f00c';
+  font-family: FontAwesome;
+  margin-right: 10px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.ajs-message.ajs-error {
+  color: #fff !important;
+  background-color: rgb(175, 15, 15) !important;
+  border-color: rgb(175, 15, 15) !important;
+  font-size: 14px;
+}
+
+.ajs-message.ajs-error:before {
+  content: '\f00d';
+  font-family: FontAwesome;
+  margin-right: 10px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.ajs-message.ajs-warning {
+  color: #fff !important;
+  background-color: #FFC107 !important;
+  border-color: #FFC107 !important;
+  font-size: 14px;
+}
+
+.ajs-message.ajs-warning:before {
+  content: '\f071';
+  font-family: FontAwesome;
+  margin-right: 10px;
+  font-size: 17px;
+  color: #333;
+}
+
+
+/* ========Notification CSS Rules ======*/
+
+
+/* ==========Widget CSS Rules ==========*/
+
+.updates-wrapper {
+  position: relative;
+  border-left: 2px solid #dee2e6!important;
+}
+
+.updates-content {
+  position: relative;
+}
+
+.updates-content:before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.updates-content.up-success:before {
+  background: #007b5e !important;
+}
+
+.updates-content.up-warning:before {
+  background: #FFC107 !important;
+}
+
+.updates-content.up-primary:before {
+  background: #007BFF !important;
+}
+
+.updates-content.up-danger:before {
+  background: rgb(175, 15, 15) !important;
+}
+
+.chat-left p,
+.chat-right p {
+  position: relative;
+}
+
+.chat-left,
+.chat-right {
+  margin-top: 0rem;
+}
+
+.chat-left small,
+.chat-right small {
+  font-size: 12px !important;
+}
+
+.chat-left p span {
+  background: #9db0c5;
+  padding: 7px;
+  border-radius: 0px 20px 20px 20px;
+  color: #5c5c5c;
+  line-height: 35px;
+  font-size: 20px;
+}
+
+.chat-left.chat-others p span {
+  border-radius: 20px;
+}
+
+.chat-right p span {
+  background: #007BFF;
+  padding: 7px;
+  border-radius: 20px 0px 20px 20px;
+  color: #fff;
+  line-height: 35px;
+  font-size: 20px;
+}
+
+.chat-right.chat-others p span {
+  border-radius: 20px;
+}
+
+.pw-2 i {
+  font-size: 70px;
+}
+
+.pw-3 i,
+.pw-3 small {
+  font-size: 70px;
+}
+
+.pw-3 i {
+  padding-left: 20px;
+}
+
+.cw-1 {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cw-1 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+}
+
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+
+
+/* ==========Widget CSS Rules ==========*/
+
+
+/* ============= Form CSS Rules ======= */
+
+.form-control-primary,
+.form-control-primary:focus {
+  border: 1px solid #0073AA;
+  color: #0073AA;
+}
+
+.form-control-warning,
+.form-control-warning:focus {
+  border: 1px solid #F1C40F;
+  color: #F1C40F;
+}
+
+.form-control-danger,
+.form-control-danger:focus {
+  border: 1px solid #EA5941;
+  color: #EA5941;
+}
+
+.form-control-info,
+.form-control-info:focus {
+  border: 1px solid #169DB2;
+  color: #169DB2;
+}
+
+.form-control-success,
+.form-control-success:focus {
+  border: 1px solid #29A744;
+  color: #29A744;
+}
+
+.fc-bg-primary,
+.fc-bg-primary:focus,
+.fc-bg-primary::-webkit-input-placeholder {
+  background: #0073AA;
+  border: 1px solid #0073AA;
+  color: #fff;
+}
+
+.fc-bg-warning,
+.fc-bg-warning:focus,
+.fc-bg-warning::-webkit-input-placeholder {
+  background: #F1C40F;
+  border: 1px solid #F1C40F;
+  color: #fff;
+}
+
+.fc-bg-danger,
+.fc-bg-danger:focus,
+.fc-bg-danger::-webkit-input-placeholder {
+  background: #EA5941;
+  border: 1px solid #EA5941;
+  color: #fff;
+}
+
+.fc-bg-info,
+.fc-bg-info:focus,
+.fc-bg-info::-webkit-input-placeholder {
+  background: #169DB2;
+  border: 1px solid #169DB2;
+  color: #fff;
+}
+
+.fc-bg-success,
+.fc-bg-success:focus,
+.fc-bg-success::-webkit-input-placeholder {
+  background: #29A744;
+  border: 1px solid #29A744;
+  color: #fff;
+}
+
+.custom-control-label {
+  line-height: 25px !important;
+}
+
+span.tag.label.label-info {
+  background: #169DB2;
+  padding: 2px 5px;
+  font-size: 14px;
+}
+
+.floating-label {
+  position: relative;
+  margin-top: 40px !important;
+}
+
+.floating-label label {
+  position: absolute;
+  pointer-events: none;
+  color: #6C757D;
+  top: 9px;
+  font-size: 14px;
+  left: 12px;
+  transition: .5s;
+  z-index: 1;
+}
+
+
+/* Modificacion estilo label focus EAM Seccion Inventario, Tracto*/
+
+.floating-label label:before {
+  content: '';
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  top: -25px;
+  border-radius: 50%;
+  background: rgba(51, 51, 51, .5);
+  transform: scale(0);
+  transition: .5s;
+  z-index: -1;
+}
+
+.floating-label input:focus~label:before {
+  animation: animatelbln .5s linear;
+}
+
+@keyframes animatelbln {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+/* Fin Modificacion estilo label focus EAM Seccion Inventario, Tracto*/
+
+.floating-label input:focus~label,
+.floating-label input:valid~label {
+  top: -25px;
+  left: 0px;
+  font-size: 15px;
+  color: #0073AA;
+}
+
+.floating-label input:focus~label {
+  animation: animatelbltext .5s linear;
+}
+
+@keyframes animatelbltext {
+  0% {
+    top: 0px;
+    transform: scale(1);
+  }
+  50% {
+    top: -25px;
+    transform: scale(1.3);
+  }
+  100% {
+    top: -25px;
+    transform: scale(1);
+  }
+}
+
+#validation_style span.help-block.form-error {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding: 0px 20px;
+}
+
+
+/*  ========== Form CSS Rules ==========*/
+
+
+/*==========Editor CSS Rules========*/
+
+#inline_editor {
+  font-size: 16px !important;
+}
+
+.editor p,
+.note-editable.card-block p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  margin-bottom: 15px;
+}
+
+
+/*========Editor CSS Rules=========*/
+
+
+/*========Chartist chart styles========*/
+
+#lineChartChartist .ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #3DC9B0;
+  /* Control the thikness of your lines */
+  stroke-width: 4px;
+}
+
+#lineChartChartist .ct-series-a .ct-point {
+  /* Set the colour of this series line */
+  stroke: #3DC9B0;
+  /* Control the thikness of your lines */
+  stroke-width: 10px;
+}
+
+#lineChartChartist .ct-series-b .ct-line {
+  /* Set the colour of this series line */
+  stroke: #3A5276;
+  /* Control the thikness of your lines */
+  stroke-width: 4px;
+}
+
+#lineChartChartist .ct-series-b .ct-point {
+  /* Set the colour of this series line */
+  stroke: #3A5276;
+  /* Control the thikness of your lines */
+  stroke-width: 10px;
+}
+
+#areaChartChartist .ct-series-a .ct-area {
+  fill: #3DC9B0;
+}
+
+#areaChartChartist .ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #3DC9B0;
+  /* Control the thikness of your lines */
+  stroke-width: 3px;
+}
+
+#areaChartChartist .ct-series-a .ct-point {
+  /* Set the colour of this series line */
+  stroke: #3DC9B0;
+  /* Control the thikness of your lines */
+  stroke-width: 7px;
+}
+
+#overlapBarchartChartist .ct-series-a .ct-bar {
+  stroke: #3DC9B0;
+}
+
+#overlapBarchartChartist .ct-series-b .ct-bar {
+  stroke: #3A5276;
+}
+
+#costRevenue .ct-series-a .ct-bar {
+  stroke: #65B5C2;
+}
+
+#costRevenue .ct-series-b .ct-bar {
+  stroke: #9b0009;
+}
+
+#chartContainer .ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #65B5C2;
+  fill: #65B5C2;
+  /* Control the thikness of your lines */
+  stroke-width: 4px;
+}
+
+#chartContainer .ct-series-a .ct-point {
+  /* Set the colour of this series line */
+  stroke: #65B5C2;
+  /* Control the thikness of your lines */
+  stroke-width: 10px;
+}
+
+#chartContainer .ct-series-b .ct-line {
+  /* Set the colour of this series line */
+  stroke: #23649E;
+  fill: #23649E;
+  /* Control the thikness of your lines */
+  stroke-width: 4px;
+}
+
+#chartContainer .ct-series-b .ct-point {
+  /* Set the colour of this series line */
+  stroke: #23649E;
+  /* Control the thikness of your lines */
+  stroke-width: 10px;
+}
+
+#stackedBarchartChartist .ct-series-a .ct-bar {
+  stroke: #3DC9B0;
+}
+
+#stackedBarchartChartist .ct-series-b .ct-bar {
+  stroke: #3A5276;
+}
+
+#pieChartChartist .ct-chart-pie .ct-label,
+#donutChartChartist .ct-chart-donut .ct-label {
+  color: #fff;
+  fill: #fff;
+}
+
+#pieChartChartist .ct-series-a .ct-slice-pie {
+  stroke: #3A5276;
+  fill: #3A5276;
+}
+
+#pieChartChartist .ct-series-b .ct-slice-pie {
+  stroke: #3DC9B0;
+  fill: #3DC9B0;
+}
+
+#donutChartChartist .ct-series-a .ct-slice-donut-solid {
+  stroke: #3A5276;
+  fill: #3A5276;
+}
+
+#donutChartChartist .ct-series-c .ct-slice-donut-solid {
+  stroke: #3DC9B0;
+  fill: #3DC9B0;
+}
+
+#areaChartFb .ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #fff;
+  /* Control the thikness of your lines */
+  stroke-width: 3px;
+}
+
+#areaChartFb .ct-series-a .ct-point {
+  /* Set the colour of this series line */
+  stroke: #fff;
+  /* Control the thikness of your lines */
+  stroke-width: 0px;
+}
+
+#areaChartFb .ct-labels .ct-label {
+  color: #fff !important;
+}
+
+
+/*========Chartist chart styles========*/
+
+
+/*===========Login page CSS Rules===========*/
+
+.login-body {
+  background: url('../img/tarred.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  position: relative;
+}
+
+.login-box {
+  width: 60%;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  transition: 300ms;
+}
+
+.login-box-info {
+  background: #9b0009;
+  padding: 45px 30px !important;
+  text-align: center;
+}
+
+.login-box-info p {
+  line-height: 25px !important;
+}
+
+.login-box-form {
+  background: #fff;
+  color: #333;
+  padding: 45px 30px !important;
+}
+
+.login-box-info a,
+.login-box-form button,
+.login-box-form input[type=submit] {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn-theme {
+  background: #9b0009;
+  color: #fff;
+}
+
+.btn-outline-theme {
+  color: #9b0009;
+  border: 1px solid #9b0009;
+  background: #fff;
+}
+
+.btn-outline-theme:hover {
+  color: #fff;
+  background: #9b0009;
+}
+
+.text-theme {
+  color: #9b0009 !important;
+}
+
+
+/*==Login and Register page CSS Rules=====*/
+
+
+/*========Profile page CSS Rules=========*/
+
+.profile-bg {
+  background-image: url('../img/tarred.jpeg');
+  background-size: cover;
+  background-position-y: 60%;
+  background-repeat: no-repeat;
+  height: 150px;
+}
+
+.profile-img {
+  position: absolute;
+  bottom: 40px;
+  z-index: 100;
+}
+
+.bio-header h3 {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 10px;
+}
+
+.feed-single .card-title {
+  font-size: 16px !important;
+  font-weight: 500;
+}
+
+.feed-single .card-img-top {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.feed-footer {
+  font-size: 13px;
+  color: #aaa;
+}
+
+
+/*======Profile Page CSS Rules==========*/
+
+
+/*======Search result Page CSS Rules==========*/
+
+.search-header {
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.search-slug {
+  font-weight: 500;
+}
+
+.search-single h5 {
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.search-single a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9b0009;
+}
+
+.search-single p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px !important;
+}
+
+
+/*======Search result Page CSS Rules==========*/
+
+
+/*======Email Page CSS Rules==========*/
+
+.email-menu a,
+.email-form label,
+.email-form input,
+.email-form button,
+.email-msg button,
+.email-msg a {
+  font-size: 15px !important;
+}
+
+.email-chat h6 small {
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
+/*======Email compose Page CSS Rules==========*/
+
+
+/*=======Email Inbox Page CSS Rules =============*/
+
+
+/*form element checkbox css*/
+
+.form-check-box input[type="checkbox"] {
+  display: none;
+}
+
+.form-check-box input[type="checkbox"]+label {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #4b4b4b;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 14px;
+}
+
+.form-check-box input[type="checkbox"]+label:last-child {
+  margin-bottom: 0;
+}
+
+.form-check-box input[type="checkbox"]+label:before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #5c5c5c;
+  position: absolute;
+  left: 8px;
+  top: -11px;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+  border-radius: 0px;
+}
+
+.form-check-box input[type="checkbox"]:checked+label:before {
+  width: 10px;
+  top: -17px;
+  left: 10px;
+  border-radius: 0;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #5c5c5c;
+  border-right-color: #5c5c5c;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.form-check-box input[type="checkbox"]:checked+label:after {
+  height: 13px;
+  width: 13px;
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: -11px;
+  border: 2px solid #5c5c5c;
+}
+
+.form-check-box.cta input[type="checkbox"]+label {
+  display: inline-block;
+  margin-right: 10px;
+  top: 0px;
+  left: 5px;
+}
+
+
+/*=======Email Inbox Page CSS Rules============*/
+
+
+/*========Products page CSS Rules============*/
+
+.product-list table,
+.product-list button,
+.product-list table tbody tr td p {
+  font-size: 15px;
+}
+
+.product-list table tbody tr td p {
+  font-weight: 400 !important;
+}
+
+.product-list table tbody tr td button i {
+  font-size: 18px !important;
+}
+
+#productList_length,
+#productList_filter,
+#productList_info {
+  font-size: 15px;
+  color: #333;
+}
+
+#productList_length label,
+#productList_filter label,
+#productList_info {
+  font-weight: 500;
+}
+
+
+/*========Products page CSS Rules============*/
+
+
+/*=========Product detail page CSS Rules========*/
+
+.slick-prev {
+  left: 1px !important;
+}
+
+.slick-next {
+  right: 1px !important;
+}
+
+.product-slug {
+  font-size: 14px;
+  line-height: 26px !important;
+  color: #000;
+}
+
+.user-rating .br-theme-fontawesome-stars .br-widget a {
+  font: normal normal normal 15px/1 FontAwesome !important;
+  margin-right: 3px;
+}
+
+.user-rating .br-theme-fontawesome-stars .br-widget a.br-active:after {
+  color: #007b5e
+}
+
+.user-rating .br-theme-fontawesome-stars .br-widget a.br-selected:after {
+  color: #007b5e;
+}
+
+
+/*======Product detail page CSS Rules==========*/
+
+
+/*===========Orders Page CSS Rules==========*/
+
+.btn-order-bulk .nice-select:after {
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.btn-order-bulk .nice-select .current {
+  color: #fff !important;
+}
+
+.order-qty {
+  width: 40px;
+  margin: 0;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.order-qty-head {
+  width: 40px !important;
+  padding: .75rem .30rem !important;
+}
+
+
+/*==========Orders Page CSS Rules============*/
+
+
+/*==========Fullcalendar Page CSS Rules============*/
+
+.fc-content,
+.fc-title,
+.fc-time {
+  color: #ffffff !important;
+  font-weight: 400;
+  font-size: 13px !important;
+}
+
+.fc-event {
+  border-radius: 0px !important;
+  /*        border: 1px solid #9b0009 !important;*/
+  border-left-width: 4px !important;
+  /*        background: #efefef !important;*/
+  padding: 2px !important;
+}
+
+.fc-row thead th {
+  /*        background: #9b0009;*/
+  border: none;
+  padding: 7px;
+  color: #fff;
+}
+
+.fc-center h2 {
+  font-size: 20px;
+  margin-top: 12px !important;
+}
+
+.fc-button.fc-state-default {
+  background: #fff;
+  border-radius: none !important;
+  height: 45px;
+}
+
+.fc-button.fc-state-default.fc-state-active {
+  /*        background: #9b0009;*/
+  color: #000;
+}
+
+
+/* Estilos generales tablas datatables EAM */
+
+
+/*div.dataTables_wrapper div.dataTables_filter input{
+margin-left: 10px !important;
+}
+table.dataTable > tbody > tr.child:hover{
+background: linear-gradient(0deg,#585858, #808080) !important;
+}
+.table-striped tbody tr:nth-of-type(odd){
+background: #898989 !important;
+}
+table, td, th{
+border: none !important;
+}
+table tbody tr:nth-of-type(odd){
+background: #898989 !important;
+}
+table thead, table tbody, table tfoot, table tr td a, table thead tr th{
+color: #fff !important;
+}
+table tbody tr{
+background: linear-gradient(0deg, #808080,#626262) !important;
+}*/
+
+table thead,
+table thead th,
+table tfoot {
+  background: #898989 !important;
+  color: #fff !important;
+}
+
+
+/*
+table thead, table thead th{
+background: linear-gradient(0deg,#B22C48,#882439) !important;
+}
+table tfoot{
+background: linear-gradient(0deg,#882439,#B22C48) !important;
+} */
+
+
+/* Fin Estilos generales tablas datatables EAM*/
+
+a:hover {
+  color: none;
+}
+
+table tbody tr td a {
+  position: relative;
+  color: #587aad !important;
+}
+table tbody tr td a:hover {
+  color: #36598e !important;
+}
+
+table tbody tr td a.fc-day-number {
+  color: #cecece !important;
+}
+
+table tbody tr td a:before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  background: #0B68DD;
+  bottom: 100%;
+  transition: .5s;
+}
+
+table tbody tr td a:hover:before {
+  width: 100%;
+  bottom: -2px;
+}
+
+#calendar {
+  padding: 20px;
+}
+
+.calendar-box table tbody tr td a {
+  color: #333 !important;
+}
+
+.card-p-orden {
+  height: 100%;
+}
+
+
+/* -------------- Modificaciones seccion atencion_talleres_detalle.php Progress Bar (Modulo Ordenes de Proveedores Detallado) EAM----------*/
+
+.progress {
+  background: #dbdde0 !important;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  background: #882439 !important;
+  position: relative;
+}
+
+.progress-bar:before,
+.progress-bar:after {
+  content: '';
+  position: absolute;
+}
+
+.progress-bar:before {
+  width: 30px;
+  height: 30px;
+  right: -30px;
+  background: #882439;
+  clip-path: polygon(0 0, 0% 100%, 50% 50%);
+  animation: animatePBB .5s linear infinite alternate;
+  box-shadow: 40px 0px 0px rgb(136, 36, 57, .8);
+}
+
+
+/*.progress-bar:after{
+background: #3b1010;
+width: 30px;
+height: 8px;
+right: -15px;
+animation: animatePB 2s linear infinite
+}
+@keyframes animatePB{
+0%{
+transform: translateX(-10px);
+}100%{
+transform: translateX(10px);
+}
+}*/
+
+@keyframes animatePBB {
+  0% {
+    right: -28px
+  }
+  50% {
+    right: -32px;
+  }
+  100% {
+    right: -32px;
+  }
+}
+
+.progress-bar-striped {
+  background: none;
+}
+
+
+/* -------------- Fin Modificaciones seccion atencion_talleres_detalle.php Progress Bar (Modulo Ordenes de Proveedores Detallado) EAM----------*/
+
+li.iconos-estatus {
+  display: inline-block;
+  text-align: center;
+  padding: 20px 25px;
+  line-height: 50px;
+  cursor: pointer;
+  position: relative;
+  margin: 20px;
+}
+
+
+/* Agregando estilo de Tooltip a iconos pagina atencion_talleres_detalle (Modulo Ordenes de Proveedores Detallado) EAM */
+
+li.tooltip1:after,
+li.tooltip2:after,
+li.tooltip3:after,
+li.tooltip4:after {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #444;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  font-size: 12px;
+  line-height: 30px;
+  color: #ccc;
+  height: 30px;
+  border-radius: 10px;
+}
+
+li.tooltip1:after {
+  content: 'Detalle de Seguimiento';
+  width: 150px;
+}
+
+li.tooltip2:after {
+  content: 'Estatus';
+  width: 100px;
+}
+
+li.tooltip3:after {
+  content: 'Fecha Estimada Solución';
+  width: 200px;
+}
+
+li.tooltip4:after {
+  content: 'Archivo';
+  width: 100px;
+}
+
+li.tooltip1:hover:after,
+li.tooltip2:hover:after,
+li.tooltip3:hover:after,
+li.tooltip4:hover:after {
+  opacity: 1;
+  visibility: visible;
+  top: -40px;
+}
+
+li.iconos-estatus:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  background: #444;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+}
+
+li.iconos-estatus:hover:before {
+  opacity: 1;
+  visibility: visible;
+  top: -15px;
+}
+
+
+/* Fin Agregando estilo de Tooltip a iconos pagina atencion_talleres_detalle.php (Modulo Ordenes de Proveedores Detallado) EAM */
+
+
+/* Agregando estilo de contenedor oculto de iconos pagina atencion_talleres_detalle.php (Modulo Ordenes de Proveedores Detallado) EAM */
+
+#comentarios,
+#estados,
+#agenda,
+#archivos,
+#collapseparticular {
+  box-shadow: 0px 0px 10px rgb(136, 36, 57, .5);
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: animateBS 1s linear infinite alternate;
+}
+
+@keyframes animateBS {
+  0% {
+    box-shadow: 0px 0px 10px rgb(136, 36, 57, .1);
+  }
+  100% {
+    box-shadow: 0px 0px 10px rgb(136, 36, 57, .7);
+  }
+}
+
+.der-cerrar {
+  cursor: pointer;
+}
+
+a.btn-primary {
+  color: #fff !important;
+}
+
+.btn-primary {
+  background: #882439;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  background: #000;
+}
+
+.btn-primary:before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #882439;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: .5s;
+}
+
+.btn-primary:hover:before {
+  right: -50px;
+}
+
+
+/* Fin Agregando estilo de contenedor oculto de iconos pagina atencion_talleres_detalle.php (Modulo Ordenes de Proveedores Detallado) EAM */
+
+
+/* Agregando estilo a imagen pagina atencion_talleres_detalle.php parte Archivos de evidencia del seguimiento
+(Modulo Ordenes de Proveedores Detallado) EAM */
+
+.imgAES {
+  width: 340px !important;
+}
+
+
+/* Fin Agregando estilo a imagen pagina atencion_talleres_detalle.php parte Archivos de evidencia del seguimiento
+(Modulo Ordenes de Proveedores Detallado) EAM */
+
+
+/* Agregando estilos icono de busqueda pagina home.php modulo (Ordenes de Proveedores Detallado) EAM */
+
+.IconoBuscador{
+  border-radius: 0px 5px 5px 24px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  padding: 2px 10px 2px 10px;
+  margin-top: 2px;
+  background: #bf1919;
+}
+
+/* Fin Agregando estilos icono de busqueda pagina home.php modulo (Ordenes de Proveedores Detallado) EAM */
+
+
+/* Modificacion para quitar margen en input de busqueda modulo (Ordenes de Proveedores Detallado) EAM */
+
+.form-control {
+  margin: 0px !important;
+}
+
+
+/* Fin Modificacion para quitar margen en input de busqueda modulo (Ordenes de Proveedores Detallado) EAM */
+
+
+/* Estilos generales checklists y radio buttons EAM */
+
+.check-s {
+  width: 20px;
+  height: 20px;
+}
+
+.font-check {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.content-check-b,
+.content-check-s {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.content-check-b {
+  height: 350px;
+}
+
+.content-check-s {
+  height: 100px;
+}
+
+input.filtros[type=checkbox],
+input.radio1[type=radio] {
+  -webkit-appearance: none !important;
+  width: 30px !important;
+  height: 15px !important;
+  border-radius: 10px;
+  background: #3a3a3a;
+  position: relative;
+}
+
+input.filtros:checked[type=checkbox],
+input.radio1:checked[type=radio] {
+  background: #08a25a;
+}
+
+input.filtros[type=checkbox]:before,
+input.radio1[type=radio]:before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 1px solid #444;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transition: .2s;
+}
+
+input.filtros:checked[type=checkbox]:before,
+input.radio1:checked[type=radio]:before {
+  left: 15px;
+  color: #000;
+}
+
+
+/* Fin Estilos generales checklists y radio buttons EAM */
+
+
+/* Modificacion de estilos datatables modulo (Ordenes de Proveedores Detallado) EAM */
+
+.ui.grid {
+  margin-left: 20px !important;
+  margin-right: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.ui.selection.dropdown {
+  z-index: 1 !important;
+}
+
+
+/* Fin Modificacion de estilos datatables modulo (Ordenes de Proveedores Detallado) EAM */
+
+
+/* Modificacion de estilos datatables paginacion modulo (Ordenes de Proveedores Detallado) EAM */
+
+.ui.pagination.menu .active.item {
+  background: #882439 !important;
+  color: #fff !important;
+}
+
+.ui.menu a.item {
+  z-index: 1;
+}
+
+.ui.menu a.item:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #882439;
+  transform: scaleX(0);
+  top: 0;
+  left: 0;
+  transition: .5s;
+  z-index: -1;
+}
+
+.ui.menu a.item:hover:after {
+  transform: scaleX(1);
+}
+
+
+/* Fin Modificacion de estilos datatables paginacion modulo (Ordenes de Proveedores Detallado) EAM */
+
+
+/* Modificacion estilos generales de resultados de busquedas EAM */
+
+#resultadoBusquedaContacto,
+#resultadoBusquedaVin,
+#resultadobuscarVIN,
+#resultadobuscarProveedor,
+#resultadoBusquedaContactoComi,
+#resultadoBusquedaContactoComi_me,
+#resultadoBusquedaContactoComi_inter,
+#resultadoBusquedaColaborador,
+#resultadobuscar,
+#respuesta_respuesta,
+#resultadoBusquedaTarjeta,
+#resultadoBusquedaCliente,
+#resultadoBusquedaAyudante,
+#resultadoBusquedaAyudante_adicional1,
+#resultadoBusquedaAyudante_adicional2,
+#resultadoBusquedaAyudante_adicional3,
+#resultadoBusquedaAyudante_adicional4,
+#resultadoBusquedaAyudante_adicional5,
+#resultadoBusquedaherramienta,
+#resultadoBusquedaherramienta_adicional1,
+#resultadoBusquedaherramienta_adicional2,
+#resultadoBusquedaherramienta_adicional3,
+#resultadoBusquedaherramienta_adicional4,
+#resultadoBusquedaherramienta_adicional5,
+#resultadoBusquedaAsesor,
+#resultadobuscarvin,
+#resultadoBusquedavinDocumentacion,
+#resultadoBusquedaID,
+#resultadoBusquedaInformante,
+#resultadoBusquedaTrasladista,
+#resultadoBusquedaColaboradorayudante1,
+#resultadoBusquedaColaboradorayudante2,
+#resultadoBusquedaColaboradorayudante3,
+#resultadoBusquedaColaboradorayudante4,
+#resultadoBusquedaColaboradorayudante5,
+#resultadoBusquedaherramienta1,
+#resultadoBusquedaherramienta2,
+#resultadoBusquedaherramienta3,
+#resultadoBusquedaherramienta4,
+#resultadoBusquedaherramienta5,
+#resultadoBusquedaColaborador_Requisicion,
+#resultadoBusquedaDocumentacionID,
+#resultadoBusquedaTrasladistaPrincipal,
+#resultadoBusquedaTrasladista2 {
+  box-shadow: 0px 0px 10px rgba(136, 36, 57, .5);
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: animateBS 1s linear infinite alternate;
+  background: #fff;
+}
+
+@keyframes animateBS {
+  0% {
+    box-shadow: 0px 0px 10px rgba(136, 36, 57, .1);
+  }
+  100% {
+    box-shadow: 0px 0px 10px rgba(136, 36, 57, .7);
+  }
+}
+
+.efecto-busqueda {
+  box-shadow: 0px 0px 10px rgba(136, 36, 57, .5);
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: animateBS 1s linear infinite alternate;
+  background: #fff;
+}
+
+.sugerencias_informacion,
+.sugerencias_vin,
+.sugerencias_particular,
+.sugerencias_proveedor,
+.sugerencias_contacto,
+.sugerencias_contacto2,
+.sugerencias_contacto2_me,
+.sugerencias_contacto2_inter,
+.sugerencias_informante,
+.sugerencias_asesor_solicitante {
+  padding: 5px;
+}
+
+#resultadobuscar .sugerencias,
+#resultadobuscar_informacion .sugerencias_informacion,
+#resultadoBusquedaVin .sugerencias_vin,
+#resultadobuscarparticular .sugerencias_particular,
+#resultadobuscarProveedor .sugerencias_proveedor,
+#resultadobuscarVIN .sugerencias_vin,
+#respuesta_respuesta .sugerencias_vin,
+#resultadoBusquedaContacto .sugerencias_contacto,
+
+/*Busquedas Ordenes de Compras archivo agregar_orden_compra.php */
+
+#resultadoBusquedaVin .sugerencias_vin,
+
+/*Busquedas Ordenes de Compras archivo agregar_orden_compra.php */
+
+#resultadoBusquedaContactoComi .sugerencias_contacto2,
+
+/*Busquedas Ordenes de Compras archivo agregar_orden_compra.php */
+
+#resultadoBusquedaContactoComi_me .sugerencias_contacto2_me,
+#resultadoBusquedaContactoComi_inter .sugerencias_contacto2_inter,
+#resultadoBusquedaColaborador .sugerencias_colaborador,
+#resultadoBusquedaTarjeta .sugerencias_tarjetas,
+#resultadoBusquedaCliente .sugerencias_cliente,
+#resultadoBusquedaAyudante .sugerencias_asesor,
+#resultadoBusquedaAyudante_adicional1 .sugerencias_asesor1,
+#resultadoBusquedaAyudante_adicional2 .sugerencias_asesor2,
+#resultadoBusquedaAyudante_adicional3 .sugerencias_asesor3,
+#resultadoBusquedaAyudante_adicional4 .sugerencias_asesor4,
+#resultadoBusquedaAyudante_adicional5 .sugerencias_asesor5,
+#resultadoBusquedaherramienta .sugerencias_herramienta,
+#resultadoBusquedaherramienta_adicional1 .sugerencias_herramienta1,
+#resultadoBusquedaherramienta_adicional2 .sugerencias_herramienta2,
+#resultadoBusquedaherramienta_adicional3 .sugerencias_herramienta3,
+#resultadoBusquedaherramienta_adicional4 .sugerencias_herramienta4,
+#resultadoBusquedaherramienta_adicional5 .sugerencias_herramienta5,
+#resultadoBusquedaAsesor .sugerencias_asesor_solicitante,
+#resultadobuscarvin .sugerencias_vin,
+#resultadoBusquedavinDocumentacion .sugerencias_vin_documentacion,
+#resultadoBusquedaID .sugerencias_id_documentacion,
+#resultadoBusquedaInformante .sugerencias_informante,
+#resultadoBusquedaTrasladista .sugerencias_trasladista,
+#resultadoBusquedaColaboradorayudante1 .sugerencias_asesor1,
+#resultadoBusquedaColaboradorayudante2 .sugerencias_asesor2,
+#resultadoBusquedaColaboradorayudante3 .sugerencias_asesor3,
+#resultadoBusquedaColaboradorayudante4 .sugerencias_asesor4,
+#resultadoBusquedaColaboradorayudante5 .sugerencias_asesor5,
+#resultadoBusquedaherramienta1 .sugerencias_herramienta1,
+#resultadoBusquedaherramienta2 .sugerencias_herramienta2,
+#resultadoBusquedaherramienta3 .sugerencias_herramienta3,
+#resultadoBusquedaherramienta4 .sugerencias_herramienta4,
+#resultadoBusquedaherramienta5 .sugerencias_herramienta5,
+#resultadoBusquedaColaborador_Requisicion .sugerencias_colaborador_requisicion,
+#resultadoBusquedaDocumentacionID .sugerencias_id_documentacion,
+#resultadoBusquedaherramienta1 .sugerencias_id_documentacion,
+#resultadoBusquedaTrasladistaPrincipal .sugerencias_trasladista,
+#resultadoBusquedaTrasladista2 .sugerencias_trasladista2 {
+  text-transform: capitalize;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+
+/* .efecto-sugerencia {
+text-transform: capitalize;
+font-size: 12px;
+position: relative;
+cursor: pointer;
+z-index: 2;
+} */
+
+#resultadobuscar .sugerencias:hover,
+#resultadobuscar_informacion .sugerencias_informacion:hover,
+#resultadoBusquedaVin .sugerencias_vin:hover,
+#resultadobuscarparticular .sugerencias_particular:hover,
+#resultadobuscarProveedor .sugerencias_proveedor:hover,
+#resultadobuscarVIN .sugerencias_vin:hover,
+#respuesta_respuesta .sugerencias_vin:hover,
+#resultadoBusquedaContacto .sugerencias_contacto:hover,
+#resultadoBusquedaVin .sugerencias_vin:hover,
+#resultadoBusquedaContactoComi .sugerencias_contacto2:hover,
+#resultadoBusquedaContactoComi_me .sugerencias_contacto2_me:hover,
+#resultadoBusquedaContactoComi_inter .sugerencias_contacto2_inter:hover,
+#resultadoBusquedaColaborador .sugerencias_colaborador:hover,
+#resultadoBusquedaTarjeta .sugerencias_tarjetas:hover,
+#resultadoBusquedaCliente .sugerencias_cliente:hover,
+#resultadoBusquedaAyudante .sugerencias_asesor:hover,
+#resultadoBusquedaAyudante_adicional1 .sugerencias_asesor1:hover,
+#resultadoBusquedaAyudante_adicional2 .sugerencias_asesor2:hover,
+#resultadoBusquedaAyudante_adicional3 .sugerencias_asesor3:hover,
+#resultadoBusquedaAyudante_adicional4 .sugerencias_asesor4:hover,
+#resultadoBusquedaAyudante_adicional5 .sugerencias_asesor5:hover,
+#resultadoBusquedaherramienta .sugerencias_herramienta:hover,
+#resultadoBusquedaherramienta_adicional1 .sugerencias_herramienta1:hover,
+#resultadoBusquedaherramienta_adicional2 .sugerencias_herramienta2:hover,
+#resultadoBusquedaherramienta_adicional3 .sugerencias_herramienta3:hover,
+#resultadoBusquedaherramienta_adicional4 .sugerencias_herramienta4:hover,
+#resultadoBusquedaherramienta_adicional5 .sugerencias_herramienta5:hover,
+#resultadoBusquedaAsesor .sugerencias_asesor_solicitante:hover,
+#resultadobuscarvin .sugerencias_vin:hover,
+#resultadoBusquedavinDocumentacion .sugerencias_vin_documentacion:hover,
+#resultadoBusquedaID .sugerencias_id_documentacion:hover,
+#resultadoBusquedaInformante .sugerencias_informante:hover,
+#resultadoBusquedaTrasladista .sugerencias_trasladista:hover,
+#resultadoBusquedaColaboradorayudante1 .sugerencias_asesor1:hover,
+#resultadoBusquedaColaboradorayudante2 .sugerencias_asesor2:hover,
+#resultadoBusquedaColaboradorayudante3 .sugerencias_asesor3:hover,
+#resultadoBusquedaColaboradorayudante4 .sugerencias_asesor4:hover,
+#resultadoBusquedaColaboradorayudante5 .sugerencias_asesor5:hover,
+#resultadoBusquedaherramienta1 .sugerencias_herramienta1:hover,
+#resultadoBusquedaherramienta2 .sugerencias_herramienta2:hover,
+#resultadoBusquedaherramienta3 .sugerencias_herramienta3:hover,
+#resultadoBusquedaherramienta4 .sugerencias_herramienta4:hover,
+#resultadoBusquedaherramienta5 .sugerencias_herramienta5:hover,
+#resultadoBusquedaColaborador_Requisicion .sugerencias_colaborador_requisicion:hover,
+#resultadoBusquedaDocumentacionID .sugerencias_id_documentacion:hover,
+#resultadoBusquedaTrasladistaPrincipal .sugerencias_trasladista:hover,
+#resultadoBusquedaTrasladista2 .sugerencias_trasladista2:hover {
+  color: #4549e4 !important;
+}
+
+
+/* .efecto-sugerencia:hover {
+color: #fff !important;
+background: none !important;
+} */
+
+.sugerencias_informacion:hover,
+.sugerencias_vin:hover,
+.sugerencias_particular:hover,
+.sugerencias_proveedor:hover,
+.sugerencias_vin:hover,
+.sugerencias_contacto:hover,
+.sugerencias_contacto2:hover,
+.sugerencias_contacto2_me:hover,
+.sugerencias_contacto2_inter:hover,
+.sugerencias_colaborador:hover,
+.sugerencias_tarjetas:hover,
+.sugerencias_cliente:hover,
+.sugerencias_asesor:hover,
+.sugerencias_asesor1:hover,
+.sugerencias_asesor2:hover,
+.sugerencias_asesor3:hover,
+.sugerencias_asesor4:hover,
+.sugerencias_asesor5:hover,
+.sugerencias_herramienta:hover,
+.sugerencias_herramienta1:hover,
+.sugerencias_herramienta2:hover,
+.sugerencias_herramienta3:hover,
+.sugerencias_herramienta4:hover,
+.sugerencias_herramienta5:hover,
+.sugerencias_asesor_solicitante:hover,
+.sugerencias_vin_documentacion:hover,
+.sugerencias_id_documentacion:hover,
+.sugerencias_informante:hover,
+.sugerencias_trasladista:hover,
+.sugerencias_trasladista2:hover {
+  background: #cdecde !important;
+}
+
+#resultadobuscar .sugerencias:before,
+#resultadobuscar_informacion .sugerencias_informacion:before,
+#resultadoBusquedaVin .sugerencias_vin:before,
+#resultadobuscarparticular .sugerencias_particular:before,
+#resultadobuscarProveedor .sugerencias_proveedor:before,
+#resultadobuscarVIN .sugerencias_vin:before,
+#respuesta_respuesta .sugerencias_vin:before,
+#resultadoBusquedaContacto .sugerencias_contacto:before,
+#resultadoBusquedaVin .sugerencias_vin:before,
+#resultadoBusquedaContactoComi .sugerencias_contacto2:before,
+#resultadoBusquedaContactoComi_me .sugerencias_contacto2_me:before,
+#resultadoBusquedaContactoComi_inter .sugerencias_contacto2_inter:before,
+#resultadoBusquedaColaborador .sugerencias_colaborador:before,
+#resultadoBusquedaTarjeta .sugerencias_tarjetas:before,
+#resultadoBusquedaCliente .sugerencias_cliente:before,
+#resultadoBusquedaAyudante .sugerencias_asesor:before,
+#resultadoBusquedaAyudante_adicional1 .sugerencias_asesor1:before,
+#resultadoBusquedaAyudante_adicional2 .sugerencias_asesor2:before,
+#resultadoBusquedaAyudante_adicional3 .sugerencias_asesor3:before,
+#resultadoBusquedaAyudante_adicional4 .sugerencias_asesor4:before,
+#resultadoBusquedaAyudante_adicional5 .sugerencias_asesor5:before,
+#resultadoBusquedaherramienta .sugerencias_herramienta:before,
+#resultadoBusquedaherramienta_adicional1 .sugerencias_herramienta1:before,
+#resultadoBusquedaherramienta_adicional2 .sugerencias_herramienta2:before,
+#resultadoBusquedaherramienta_adicional3 .sugerencias_herramienta3:before,
+#resultadoBusquedaherramienta_adicional4 .sugerencias_herramienta4:before,
+#resultadoBusquedaherramienta_adicional5 .sugerencias_herramienta5:before,
+#resultadoBusquedaAsesor .sugerencias_asesor_solicitante:before,
+#resultadobuscarvin .sugerencias_vin:before,
+#resultadoBusquedavinDocumentacion .sugerencias_vin_documentacion:before,
+#resultadoBusquedaID .sugerencias_id_documentacion:before,
+#resultadoBusquedaInformante .sugerencias_informante:before,
+#resultadoBusquedaTrasladista .sugerencias_trasladista:before,
+#resultadoBusquedaColaboradorayudante1 .sugerencias_asesor1:before,
+#resultadoBusquedaColaboradorayudante2 .sugerencias_asesor2:before,
+#resultadoBusquedaColaboradorayudante3 .sugerencias_asesor3:before,
+#resultadoBusquedaColaboradorayudante4 .sugerencias_asesor4:before,
+#resultadoBusquedaColaboradorayudante5 .sugerencias_asesor5:before,
+#resultadoBusquedaherramienta1 .sugerencias_herramienta1:before,
+#resultadoBusquedaherramienta2 .sugerencias_herramienta2:before,
+#resultadoBusquedaherramienta3 .sugerencias_herramienta3:before,
+#resultadoBusquedaherramienta4 .sugerencias_herramienta4:before,
+#resultadoBusquedaherramienta5 .sugerencias_herramienta5:before,
+#resultadoBusquedaColaborador_Requisicion .sugerencias_colaborador_requisicion:before,
+#resultadoBusquedaDocumentacionID .sugerencias_id_documentacion:before,
+#resultadoBusquedaTrasladistaPrincipal .sugerencias_trasladista:before,
+#resultadoBusquedaTrasladista2 .sugerencias_trasladista2:before {
+  background: #882439 !important;
+}
+
+
+/* .efecto-sugerencia:before {
+background: #882439 !important;
+} */
+
+#resultadobuscar .content-op-busqueda,
+#resultadobuscar_informacion .content-op-busqueda,
+#resultadoBusquedaVin .content-op-busqueda,
+#resultadobuscarparticular .content-op-busqueda,
+#resultadobuscarProveedor .content-op-busqueda,
+#resultadobuscarVIN .content-op-busqueda,
+#respuesta_respuesta .content-op-busqueda,
+#resultadoBusquedaContacto .content-op-busqueda,
+#resultadoBusquedaVin .content-op-busqueda,
+#resultadoBusquedaContactoComi .content-op-busqueda,
+#resultadoBusquedaContactoComi_me .content-op-busqueda,
+#resultadoBusquedaContactoComi_inter .content-op-busqueda,
+#resultadoBusquedaColaborador .content-op-busqueda,
+#resultadoBusquedaTarjeta .content-op-busqueda,
+#resultadoBusquedaCliente .content-op-busqueda,
+#resultadoBusquedaAyudante .content-op-busqueda,
+#resultadoBusquedaAyudante_adicional1 .content-op-busqueda,
+#resultadoBusquedaAyudante_adicional2 .content-op-busqueda,
+#resultadoBusquedaAyudante_adicional3 .content-op-busqueda,
+#resultadoBusquedaAyudante_adicional4 .content-op-busqueda,
+#resultadoBusquedaAyudante_adicional5 .content-op-busqueda,
+#resultadoBusquedaherramienta .content-op-busqueda,
+#resultadoBusquedaherramienta_adicional1 .content-op-busqueda,
+#resultadoBusquedaherramienta_adicional2 .content-op-busqueda,
+#resultadoBusquedaherramienta_adicional3 .content-op-busqueda,
+#resultadoBusquedaherramienta_adicional4 .content-op-busqueda,
+#resultadoBusquedaherramienta_adicional5 .content-op-busqueda,
+#resultadoBusquedaAsesor .content-op-busqueda,
+#resultadobuscarvin .content-op-busqueda,
+#resultadoBusquedavinDocumentacion .content-op-busqueda,
+#resultadoBusquedaID .content-op-busqueda,
+#resultadoBusquedaInformante .content-op-busqueda,
+#resultadoBusquedaTrasladista .content-op-busqueda,
+#resultadoBusquedaColaboradorayudante1 .content-op-busqueda,
+#resultadoBusquedaColaboradorayudante2 .content-op-busqueda,
+#resultadoBusquedaColaboradorayudante3 .content-op-busqueda,
+#resultadoBusquedaColaboradorayudante4 .content-op-busqueda,
+#resultadoBusquedaColaboradorayudante5 .content-op-busqueda,
+#resultadoBusquedaherramienta1 .content-op-busqueda,
+#resultadoBusquedaherramienta2 .content-op-busqueda,
+#resultadoBusquedaherramienta3 .content-op-busqueda,
+#resultadoBusquedaherramienta4 .content-op-busqueda,
+#resultadoBusquedaherramienta5 .content-op-busqueda,
+#resultadoBusquedaColaborador_Requisicion .content-op-busqueda,
+#resultadoBusquedaDocumentacionID .content-op-busqueda,
+#resultadoBusquedaTrasladistaPrincipal .content-op-busqueda,
+#resultadoBusquedaTrasladista2 .content-op-busqueda {
+  position: relative;
+}
+
+
+/* .content-op-busqueda {
+position: relative;
+} */
+
+#resultadobuscar .content-op-busqueda:before,
+#resultadobuscar_informacion .content-op-busqueda:before,
+#resultadoBusquedaVin .content-op-busqueda:before,
+#resultadobuscarparticular .content-op-busqueda:before,
+#resultadobuscarProveedor .content-op-busqueda:before,
+#resultadobuscarVIN .content-op-busqueda:before,
+#respuesta_respuesta .content-op-busqueda:before,
+#resultadoBusquedaContacto .content-op-busqueda:before,
+#resultadoBusquedaVin .content-op-busqueda:before,
+#resultadoBusquedaContactoComi .content-op-busqueda:before,
+#resultadoBusquedaContactoComi_me .content-op-busqueda:before,
+#resultadoBusquedaContactoComi_inter .content-op-busqueda:before,
+#resultadoBusquedaColaborador .content-op-busqueda:before,
+#resultadoBusquedaTarjeta .content-op-busqueda:before,
+#resultadoBusquedaCliente .content-op-busqueda:before,
+#resultadoBusquedaAyudante .content-op-busqueda:before,
+#resultadoBusquedaAyudante_adicional1 .content-op-busqueda:before,
+#resultadoBusquedaAyudante_adicional2 .content-op-busqueda:before,
+#resultadoBusquedaAyudante_adicional3 .content-op-busqueda:before,
+#resultadoBusquedaAyudante_adicional4 .content-op-busqueda:before,
+#resultadoBusquedaAyudante_adicional5 .content-op-busqueda:before,
+#resultadoBusquedaherramienta .content-op-busqueda:before,
+#resultadoBusquedaherramienta_adicional1 .content-op-busqueda:before,
+#resultadoBusquedaherramienta_adicional2 .content-op-busqueda:before,
+#resultadoBusquedaherramienta_adicional3 .content-op-busqueda:before,
+#resultadoBusquedaherramienta_adicional4 .content-op-busqueda:before,
+#resultadoBusquedaherramienta_adicional5 .content-op-busqueda:before,
+#resultadoBusquedaAsesor .content-op-busqueda:before,
+#resultadobuscarvin .content-op-busqueda:before,
+#resultadoBusquedavinDocumentacion .content-op-busqueda:before,
+#resultadoBusquedaID .content-op-busqueda:before,
+#resultadoBusquedaInformante .content-op-busqueda:before,
+#resultadoBusquedaTrasladista .content-op-busqueda:before,
+#resultadoBusquedaColaboradorayudante1 .content-op-busqueda:before,
+#resultadoBusquedaColaboradorayudante2 .content-op-busqueda:before,
+#resultadoBusquedaColaboradorayudante3 .content-op-busqueda:before,
+#resultadoBusquedaColaboradorayudante4 .content-op-busqueda:before,
+#resultadoBusquedaColaboradorayudante5 .content-op-busqueda:before,
+#resultadoBusquedaherramienta1 .content-op-busqueda:before,
+#resultadoBusquedaherramienta2 .content-op-busqueda:before,
+#resultadoBusquedaherramienta3 .content-op-busqueda:before,
+#resultadoBusquedaherramienta4 .content-op-busqueda:before,
+#resultadoBusquedaherramienta5 .content-op-busqueda:before,
+#resultadoBusquedaColaborador_Requisicion .content-op-busqueda:before,
+#resultadoBusquedaDocumentacionID .content-op-busqueda:before,
+#resultadoBusquedaTrasladistaPrincipal .content-op-busqueda:before,
+#resultadoBusquedaTrasladista2 .content-op-busqueda:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: #882439 !important;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: .5s;
+}
+
+
+/* .content-op-busqueda:before {
+content: '';
+position: absolute;
+width: 50%;
+height: 50%;
+background: #882439 !important;
+top: 50%;
+left: 50%;
+z-index: 1;
+transform: translate(-50%, -50%);
+opacity: 0;
+transition: .5s;
+} */
+
+#resultadobuscar .content-op-busqueda:hover:before,
+#resultadobuscar_informacion .content-op-busqueda:hover:before,
+#resultadoBusquedaVin .content-op-busqueda:hover:before,
+#resultadobuscarparticular .content-op-busqueda:hover:before,
+#resultadobuscarProveedor .content-op-busqueda:hover:before,
+#resultadobuscarVIN .content-op-busqueda:hover:before,
+#respuesta_respuesta .content-op-busqueda:hover:before,
+#resultadoBusquedaContacto .content-op-busqueda:hover:before,
+#resultadoBusquedaVin .content-op-busqueda:hover:before,
+#resultadoBusquedaContactoComi .content-op-busqueda:hover:before,
+#resultadoBusquedaContactoComi_me .content-op-busqueda:hover:before,
+#resultadoBusquedaContactoComi_inter .content-op-busqueda:hover:before,
+#resultadoBusquedaColaborador .content-op-busqueda:hover:before,
+#resultadoBusquedaTarjeta .content-op-busqueda:hover:before,
+#resultadoBusquedaCliente .content-op-busqueda:hover:before,
+#resultadoBusquedaAyudante .content-op-busqueda:hover:before,
+#resultadoBusquedaAyudante_adicional1 .content-op-busqueda:hover:before,
+#resultadoBusquedaAyudante_adicional2 .content-op-busqueda:hover:before,
+#resultadoBusquedaAyudante_adicional3 .content-op-busqueda:hover:before,
+#resultadoBusquedaAyudante_adicional4 .content-op-busqueda:hover:before,
+#resultadoBusquedaAyudante_adicional5 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta_adicional1 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta_adicional2 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta_adicional3 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta_adicional4 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta_adicional5 .content-op-busqueda:hover:before,
+#resultadoBusquedaAsesor .content-op-busqueda:hover:before,
+#resultadobuscarvin .content-op-busqueda:hover:before,
+#resultadoBusquedavinDocumentacion .content-op-busqueda:hover:before,
+#resultadoBusquedaID .content-op-busqueda:hover:before,
+#resultadoBusquedaInformante .content-op-busqueda:hover:before,
+#resultadoBusquedaTrasladista .content-op-busqueda:hover:before,
+#resultadoBusquedaColaboradorayudante1 .content-op-busqueda:hover:before,
+#resultadoBusquedaColaboradorayudante2 .content-op-busqueda:hover:before,
+#resultadoBusquedaColaboradorayudante3 .content-op-busqueda:hover:before,
+#resultadoBusquedaColaboradorayudante4 .content-op-busqueda:hover:before,
+#resultadoBusquedaColaboradorayudante5 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta1 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta2 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta3 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta4 .content-op-busqueda:hover:before,
+#resultadoBusquedaherramienta5 .content-op-busqueda:hover:before,
+#resultadoBusquedaColaborador_Requisicion .content-op-busqueda:hover:before,
+#resultadoBusquedaDocumentacionID .content-op-busqueda:hover:before,
+#resultadoBusquedaTrasladistaPrincipal .content-op-busqueda:hover:before,
+#resultadoBusquedaTrasladista2 .content-op-busqueda:hover:before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+
+/* .content-op-busqueda:hover:before {
+width: 100%;
+height: 100%;
+opacity: 1;
+} */
+
+
+/* Fin Modificacion estilos generales de resultados de busquedas EAM */
+
+.sec-datos {
+  border-top: 1px solid #A0213C;
+  padding: 0px 10px;
+}
+
+.page-item.active .page-link {
+  background: #882439 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.page-link:hover {
+  color: #fff !important;
+  background: none !important;
+}
+
+.pagination a:hover {
+  font-size: 16px;
+}
+
+.pagination .paginate_button .page-link:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #882439;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: .5s;
+  z-index: -1;
+}
+
+.pagination .paginate_button .page-link:hover:before {
+  transform: scaleX(1);
+}
+
+.btn-tooltip {
+  position: relative;
+}
+
+.btn-tooltip a.btn-primary {
+  color: #fff;
+  width: 140px;
+  margin: 0px 40px;
+  display: none;
+}
+
+.btn-tooltip span {
+  position: absolute;
+  width: 280px;
+  height: 40px;
+  background: #882439;
+  left: 50%;
+  transform: translateX(-50%) translateY(0px) scale(0);
+  font-size: 10px;
+  color: #fff;
+  border-radius: 10px;
+  transition: .2s;
+}
+
+.btn-tooltip:hover span {
+  transform: translateX(-50%) translateY(-50px) scale(1);
+}
+
+.btn-tooltip span:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #882439;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* Estilos Generales Card de perfiles de clientes y proveedores modulo (Movimiento Exitoso General) EAM */
+
+.card-perfil {
+  width: 420px;
+  height: 650px;
+  border-radius: 20px;
+  background: #dadbe0;
+  box-shadow: 0px 0px 20px rgba(136, 36, 57, .2);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  text-align: center;
+  transition: .5s;
+}
+
+.card-front .content-id {
+  text-align: center;
+  background: #F3F3F3;
+  color: #262626;
+  font-weight: bold;
+}
+
+.card-front .content-img {
+  background: #fff;
+  margin-top: -10px;
+  padding: 20px 0px;
+}
+
+.card-front .content-img img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  border: 10px solid #dddddd;
+  position: relative;
+  z-index: 2;
+}
+
+.card-front .content-nombre {
+  background: #242424;
+  color: #fff;
+}
+
+.card-front .content-nombre h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  color: #fbfbfb;
+}
+
+.card-front .content-direccion p {
+  font-size: 16px;
+  border-bottom: 1px solid #8d8d8d;
+  padding-bottom: 8px;
+}
+
+.card-front .content-telefono {
+  margin-top: 20px;
+}
+
+.card-front .content-telefono p {
+  font-size: 14px;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #dadbe0;
+  left: 100%;
+  transition: .5s;
+}
+
+.card-back .dato:nth-child(1) {
+  padding: 20px 20px 10px 20px;
+}
+
+.card-back .dato:nth-child(2) {
+  padding: 0px 20px 10px 20px;
+}
+
+.card-back .dato:nth-child(3) {
+  padding: 0px 20px;
+}
+
+.card-back .dato h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.card-back .dato .des-dato {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-back .dato .des-dato p {
+  font-size: 14px;
+}
+
+.card-perfil p a i {
+  color: #0B68DD;
+  font-size: 20px !important;
+}
+
+.content-btnCard {
+  margin-top: 20px;
+}
+
+.content-btnCard .btnCard {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  border: none;
+  color: #fff !important;
+  line-height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.content-btnCard .btnCard:hover {
+  color: #333 !important;
+}
+
+.content-btnCard .btnCard:before,
+.content-btnCard .btnCard:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.content-btnCard .btnCard:before {
+  border: 2px solid #882439;
+  transform: scale(.6);
+  opacity: 0;
+}
+
+.content-btnCard .btnCard:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.content-btnCard .btnCard:after {
+  background: #882439;
+  transform: scale(1);
+  z-index: -1;
+}
+
+.content-btnCard .btnCard:hover:after {
+  transform: scale(0);
+}
+
+
+/* Fin Estilos Generales Card de perfiles de clientes y proveedores modulo (Movimiento Exitoso General) EAM */
+
+.imgDP {
+  animation: animateimgDP 7s linear infinite;
+}
+
+@keyframes animateimgDP {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 0deg) scale(1.2);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+
+/* Estilos generales de tooltips de iconos en modulo Orden Compra */
+
+.tooltipDetalleOrden {
+  text-align: center;
+}
+
+.tooltipDetalleOrden p {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 20px;
+  font-weight: bold;
+  color: #882439;
+  transition: .5s;
+  transform: translateY(10px);
+}
+
+.tooltipDetalleOrden p:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #882439;
+  bottom: -8px;
+  left: 0;
+  transition: .5s;
+}
+
+.icon-DOrden {
+  width: 100%;
+  text-align: center;
+}
+
+.icon-DOrden:hover~.tooltipDetalleOrden p:before {
+  width: 100%;
+}
+
+.icon-DOrden:hover~.tooltipDetalleOrden p {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+
+/* Fin Estilos generales de tooltips de iconos en modulo Orden Compra */
+
+
+
+.content-select {
+  max-width: 100%;
+  position: relative;
+}
+
+
+
+
+
+.content-select i {
+  position: absolute;
+  right: 20px;
+  top: calc(60% - 13px);
+  width: 12px;
+  height: 12px;
+  display: block;
+  border-left: 3px solid #808080;
+  border-bottom: 3px solid #808080;
+  transform: rotate(-45deg);
+  /* Giramos el cuadrado */
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.content-select:hover i {
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+
+
+
+/* Modificacion estilos agregar_orden_compra.php parte agregar origen y refacturacion opcion select Procedencia */
+
+.oculto-adicional-documentos {
+  width: 80%;
+  margin: 20px auto;
+  height: 0;
+  background: white;
+  position: relative;
+  border-radius: 5px;
+  z-index: 4;
+  transition: 1s;
+  transform: translateY(-8000px);
+  -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
+}
+
+.oculto-adicional-documentos_mostrar {
+  height: 550px;
+  transform: translateY(0px);
+  z-index: 4;
+  overflow-y: scroll;
+}
+
+
+/* Fin Modificacion estilos agregar_orden_compra.php parte agregar origen y refacturacion opcion select Procedencia */
+
+
+/*==========Fullcalendar Page CSS Rules============*/
+
+
+/*==============Error 404 rules ==================*/
+
+.code {
+  font-size: 180px;
+  text-align: center;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: 'Geometric 212 Book Condensed BT' !important;
+  line-height: 160px;
+}
+
+.button-eliminar {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-eliminar span {
+  display: block;
+  width: 70%;
+  background: #EB3C54;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  transition: .3s;
+  position: absolute;
+  left: 0;
+}
+
+.button-eliminar:hover span {
+  left: -70%;
+}
+
+.button-eliminar .fa-times {
+  width: 30%;
+  position: absolute;
+  background: #D42A44;
+  left: 70%;
+  text-align: center;
+  line-height: 40px;
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+.button-eliminar:hover .fa-times {
+  width: 100%;
+  left: 0;
+}
+
+.fondo-container {
+  background: linear-gradient(90deg, #e6e6e6, white, #e6e6e6);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+}
+
+.fondo-encabezados {
+  background: linear-gradient(45deg, #d43759, #882439);
+}
+
+
+/*==============Error 404 rules ==================*/
+
+@media only screen and (max-width: 1074px) {
+  /*.header{
+  max-width: 104%;
+  }*/
+  /* Modificacion Responsive avatar | datos | select EAM */
+  .avatar img {
+    margin-top: 15px;
+  }
+  .avatar>p {
+    font-size: 10px;
+    margin-bottom: 0px;
+  }
+  .avatar span.small {
+    font-size: 10px;
+  }
+  .icon-select:before {
+    width: 10px;
+    font-size: 10px;
+  }
+  /* Fin Modificacion Responsive avatar | datos | select EAM */
+  .sidebar {
+    max-width: 85px !important;
+    min-width: 85px !important;
+  }
+  .sidebar.sidebar.shrink-sidebar {
+    max-width: 250px !important;
+    min-width: 250px !important;
+    z-index: 1000;
+    position: absolute;
+    bottom: -20px;
+    top: 0px;
+    height: 100%;
+  }
+  .sidebar .avatar img {
+    width: 40px;
+    height: 40px;
+  }
+  .sidebar.shrink-sidebar .avatar img {
+    width: 50px;
+    height: 50px;
+  }
+  .sidebar .avatar p,
+  .sidebar .avatar span.small {
+    display: none;
+  }
+  .sidebar.shrink-sidebar .avatar p,
+  .sidebar.shrink-sidebar .avatar span.small {
+    display: block;
+  }
+  .sidebar .sidebar-menu li {
+    position: relative !important;
+    border-bottom: 1px solid #898989;
+  }
+  .sidebar .sidebar-menu li a {
+    padding-top: 10px;
+    pointer-events: visible;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li a {
+    pointer-events: auto;
+  }
+  .sidebar .sidebar-menu li a:hover {
+    padding-left: 15px;
+  }
+  .sidebar .sidebar-menu li a span.none {
+    display: none;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li a span.none {
+    display: initial;
+  }
+  .sidebar .sidebar-menu li ul {
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    left: 50px;
+    width: 270px !important;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li ul {
+    position: relative;
+    left: 0px;
+    z-index: 0 !important;
+    width: auto !important;
+  }
+  .sidebar .sidebar-menu li:hover ul {
+    display: block;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li:hover ul {
+    display: none;
+  }
+  .sidebar .sidebar-menu li ul li {
+    border-bottom: 1px solid #4b4b4b;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li ul li {
+    border-bottom: none;
+  }
+  .sidebar .sidebar-menu li ul li:last-child {
+    border-bottom: none;
+  }
+  .sidebar .sidebar-menu li:hover ul li a {
+    padding-left: 2px;
+  }
+  .content {
+    min-width: 90% !important;
+  }
+  .content.content.expand-content {
+    min-width: 100%;
+  }
+  .login-box {
+    width: 75%;
+  }
+  /* Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  .content-check-b {
+    height: 600px;
+  }
+  .content-check-s {
+    height: 160px;
+  }
+  /* Fin Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM*/
+  #resultadoBusquedaContacto .sugerencias_contacto,
+  .respuesta .sugerencias_contacto,
+  #resultadoBusquedavinDocumentacion .sugerencias_vin_documentacion,
+  #resultadoBusquedaID .sugerencias_id_documentacion {
+    font-size: 10px;
+  }
+  #resultadoBusquedaVin .sugerencias_vin {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 906px) {
+  .icon-select:before {
+    width: 20px;
+    font-size: 16px;
+  }
+  .sidebar {
+    max-width: 0px !important;
+    min-width: 0px !important;
+    width: 0px !important;
+    min-height: 100%;
+    overflow: hidden;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    z-index: 1000;
+    position: absolute;
+    top: 0px;
+    bottom: 0px !important;
+  }
+  .sidebar .avatar img {
+    display: none;
+  }
+  .sidebar .avatar p,
+  .sidebar .avatar span.small {
+    display: none;
+  }
+  .avatar img {
+    width: 30px;
+    height: 30px;
+  }
+  .avatar span.small {
+    font-size: 10px;
+  }
+  .sidebar.shrink-sidebar .avatar {
+    text-align: center;
+  }
+  .sidebar.shrink-sidebar .avatar img {
+    display: inline;
+  }
+  .sidebar.shrink-sidebar .avatar p,
+  .sidebar.shrink-sidebar .avatar span.small {
+    display: block;
+  }
+  .content {
+    width: 100%;
+    min-width: 100% !important;
+  }
+  .content.expand-content {
+    width: 100%;
+    min-width: 100%;
+  }
+  .content.pl-0 {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .card-chats {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 868px) {
+  /* Modificacion .avatar span.small | Seccion menu.php */
+  .avatar span.small {
+    font-size: 8px;
+  }
+  /* Fin Modificacion .avatar span.small | Seccion menu.php */
+  /* Modificacion h1 Marca de carros seccion home.php EAM */
+  .custom-card h1 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  /* Fin Modificacion h1 Marca de carros seccion home.php EAM */
+  .cont-1,
+  .cont-2,
+  .cont-3,
+  .cont-4 {
+    display: initial;
+  }
+  #card-chats,
+  #card-all {
+    margin-left: 0px !important;
+  }
+  #card-chats,
+  #card-all,
+  .card-pro,
+  .card-traffic,
+  .card-analytics,
+  .card-calendar {
+    display: block !important;
+    min-width: 100%;
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 0px;
+  }
+  .login-box {
+    width: 85%;
+  }
+  .profile-img {
+    top: 100px;
+  }
+  .bio-header {
+    margin-left: 0px;
+  }
+  .bio-header,
+  .bio-comment {
+    display: block;
+    min-width: 100% !important;
+    text-align: center !important;
+  }
+  .bio-comment {
+    padding: 5px 0px !important;
+  }
+  /* Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  .font-check {
+    font-size: 12px;
+  }
+  .content-check-b {
+    height: 600px;
+  }
+  .content-check-s {
+    height: 160px;
+  }
+  /* Fin Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+}
+
+@media only screen and (max-width: 748px) {
+  .mr-3 {
+    margin-right: 0px !important;
+  }
+  .container-fluid {
+    padding: 0px !important;
+  }
+  .header.pt-3.pb-2 {
+    display: initial;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  .header-logo {
+    display: block;
+    min-width: 100%;
+    width: 100%;
+    /*background: #9b0009;*/
+    padding: 0px;
+    margin: 0px;
+  }
+  .avatar img {
+    width: 50px;
+    height: 50px;
+  }
+  .avatar>p {
+    font-size: 18px;
+  }
+  .avatar span.small {
+    font-size: 10px;
+  }
+  .logo,
+  .logo span.small {
+    color: #fff !important;
+    font-size: 23px;
+  }
+  .sugerencias {
+    padding: 5px 20px;
+  }
+  .sugerencias a {
+    font-size: 12px;
+  }
+  a:hover {
+    color: #fff;
+  }
+  .header-menu {
+    display: block;
+    min-width: 100%;
+    padding: 7px 5px 7px 15px !important;
+    box-shadow: 0px 2px 2px 0px #ccc;
+  }
+  .menu-icon:first-child {
+    margin: 5px 15px 0px 30px;
+  }
+  .sidebar {
+    top: 0px;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li a {
+    padding-left: 25px !important;
+  }
+  .sidebar.shrink-sidebar .sidebar-menu li a:hover {
+    padding-left: 30px !important;
+  }
+  .login-box {
+    width: 95%;
+  }
+  /* Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  .font-check {
+    font-size: 10px;
+  }
+  .content-check-b {
+    height: 500px;
+  }
+  /* Fin Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  #resultadobuscar .sugerencias,
+  #resultadobuscar_informacion .sugerencias_informacion,
+  #resultadoBusquedaVin .sugerencias_vin,
+  #resultadobuscarparticular .sugerencias_particular,
+  #resultadobuscarProveedor .sugerencias_proveedor,
+  #resultadobuscarVIN .sugerencias_vin,
+  #respuesta_respuesta .sugerencias_vin,
+  #resultadoBusquedaContacto .sugerencias_contacto,
+  #resultadoBusquedaVin .sugerencias_vin,
+  #resultadoBusquedaContactoComi .sugerencias_contacto2,
+  .respuesta .sugerencias_contacto,
+  #resultadoBusquedavinDocumentacion .sugerencias_vin_documentacion,
+  #resultadoBusquedaID .sugerencias_id_documentacion {
+    font-size: 8px;
+  }
+  .card-back .dato .des-dato p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .search-box {
+    display: none;
+  }
+  .profile-img {
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* Imagen Responsive pagina ordenes_talleres_detalle.php parte Archivos de evidencia del seguimiento
+  (Modulo Ordenes de Proveedores Detallado) EAM */
+  .imgAES {
+    width: 240px !important;
+    height: auto;
+  }
+  /* Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  .font-check {
+    font-size: 8px;
+  }
+  .content-check-b {
+    height: 600px;
+  }
+  .content-check-s {
+    height: 280px;
+  }
+  /* Fin Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  #resultadoBusquedaContacto .sugerencias_contacto,
+  .respuesta .sugerencias_contacto,
+  #resultadoBusquedavinDocumentacion .sugerencias_vin_documentacion,
+  #resultadoBusquedaID .sugerencias_id_documentacion {
+    font-size: 6px;
+  }
+  #resultadoBusquedaVin .sugerencias_vin {
+    font-size: 6px;
+  }
+  #resultadobuscarVIN .sugerencias_vin {
+    font-size: 6px !important;
+  }
+  .oculto-adicional-documentos {
+    width: 90%;
+  }
+  .enviar_refacturas {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .avatar>p {
+    font-size: 10px;
+  }
+  /* Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  .font-check {
+    font-size: 6px;
+  }
+  .content-check-b {
+    height: 700px;
+  }
+  /* Fin Modificacion Responsive checklists modulo (Ordenes de Proveedores Detallado) EAM */
+  #resultadobuscar .sugerencias,
+  #resultadobuscar_informacion .sugerencias_informacion,
+  #resultadoBusquedaVin .sugerencias_vin,
+  #resultadobuscarparticular .sugerencias_particular,
+  #resultadobuscarProveedor .sugerencias_proveedor,
+  #resultadobuscarVIN .sugerencias_vin,
+  #respuesta_respuesta .sugerencias_vin {
+    font-size: 6px;
+  }
+  #resultadoBusquedaContacto .sugerencias_contacto,
+  .respuesta .sugerencias_contacto {
+    font-size: 5px;
+  }
+  .btn-tooltip a.btn-primary {
+    width: 120px;
+    margin: 0px 10px;
+    font-size: 12px;
+  }
+  .btn-tooltip span {
+    width: 200px;
+    font-size: 7px;
+  }
+  .card-back .dato h1 {
+    font-size: 16px;
+  }
+  .card-back .dato .des-dato p {
+    font-size: 10px;
+  }
+  .btnOrdenR {
+    /*Boton generar orden archivo detalle_oc.php (Modulo Orden de Compra) */
+    width: 250px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 25px;
+  }
+}
+
+@media only screen and (max-height: 497px) {
+  .dropdown-menu.mt-10 {
+    margin-top: 2.7rem !important;
+  }
+}

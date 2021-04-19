@@ -762,13 +762,13 @@
 								El comprador y Panamotors Center aceptan la realización de la presente compraventa en los términos establecidos en este contrato, y sabedores de su contenido legal, lo firman por duplicado.
 							</p>
 						</div>
-						<div style="width: 50%; float: left; font-size: 8px; text-align: center;">
+						<div style="width: 50%; float: left; font-size: 8px; text-align: center; margin-top: 30px;">
 							<p>
 								El Vendedor
 							</p>
 							<br>
 							<p>
-								________________________________
+								_____________________________________
 							</p>
 						</div>
 						<div style="width: 50%; float: left; font-size: 8px; text-align: center;">
@@ -777,7 +777,7 @@
 							</p>
 							<br>
 							<p>
-								________________________________
+								_____________________________________
 							</p>
 						</div>
 					</div>

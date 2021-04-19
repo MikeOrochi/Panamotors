@@ -139,7 +139,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                       <div class="col-sm-6">
                           <label for="master"><b style="color:red;padding-right: 10px;">*</b>Master</label>
                           <select id="master" name="master" class="form-control" aria-label="Default select example">
-                              <option value="N/A" >N/A</option>
+                              <!-- <option value="N/A" >N/A</option> -->
                               @foreach($masters as $value)
                                 <option value='{{$value->idempleados}}'>{{$value->columna_b." - ".$value->nombre." ".$value->apellido_paterno." ".$value->apellido_materno}}</option>
                               @endforeach
@@ -210,8 +210,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                       <div class="col-sm-6 form-group">
                           <label for="">Orden de Compra</label>
                           <select name="orden_compra" id="orden_compra" class="form-control">
-                              <option value="">Seleccione opción...</option>
-                              <option value="N/A">N/A</option>
+
                               <?php
                               // $sql2 = "SELECT * FROM orden_compra_unidades WHERE estatus != 'Finalizado' AND estatus != 'Cancelado' AND visible='SI' AND procedencia <> '' AND estatus_orden != 'No Negociable'";
                               // $resultado2 =mysql_query($sql2);
@@ -221,9 +220,12 @@ use App\Http\Controllers\GlobalFunctionsController;
                               //     echo '<option value="'.$idorden_compra_unidades.'">'.$idorden_compra_unidades.' - '.$vinoc.'</option>';
                               // }
                               ?>
-                              @foreach($orden_compra_unidades as $orden)
-                                <option value="{{$orden->idorden_compra_unidades}}">{{$orden->idorden_compra_unidades.' - '.$orden->vin}}</option>
-                              @endforeach
+                                @if(!empty($orden_compra_unidades))
+                                <option value="{{$orden_compra_unidades->idorden_compra_unidades}}">{{$orden_compra_unidades->idorden_compra_unidades.' - '.$orden_compra_unidades->vin}}</option>
+                                @else
+                                <option value="N/A">N/A</option>
+                                @endif
+
                           </select>
                       </div>
                       <div class="col-sm-6 form-group" >

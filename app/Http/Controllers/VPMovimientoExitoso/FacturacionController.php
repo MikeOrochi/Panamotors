@@ -68,7 +68,8 @@ class FacturacionController extends Controller {
 
 
 
-    $orden_compra_unidades =orden_compra_unidades::where('estatus','!=','Finalizado')->where('estatus','!=','Cancelado')->where('visible','SI')->where('procedencia','!=','')->where('estatus_orden','!=','No Negociable')->get();
+    $orden_compra_unidades =orden_compra_unidades::where('estatus','!=','Finalizado')->where('estatus','!=','Cancelado')->where('visible','SI')
+                            ->where('procedencia','!=','')->where('estatus_orden','!=','No Negociable')->where('vin',$vpme->vin_numero_serie)->get()->last();
 
 
     return view('VPMovimientoExitoso.facturacion', compact('vpme','inventario','empleados','departamentos','masters','orden_compra_unidades'));

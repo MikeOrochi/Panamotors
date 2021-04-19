@@ -300,9 +300,6 @@
                 <li data-toggle="tooltip" data-placement="right" title="Rechazar">
                   <a style="margin-right: 15px;" onclick="ActualizarMovimiento({{'"'.Crypt::encrypt($V->id).'"'.',"Rechazado"'}})" class='iconos-estatus tool_editar_inventario'><i class="fa fa-close  icon-DOrden font-icond font-iconrojo" @if($V->estatus == "Rechazado")style="color:red; font-size:28px;"@endif></i></a>
                   </li>
-                <li data-toggle="tooltip" data-placement="right" title="Facturar">
-                  <a style="margin-right: 15px;" onclick="ActualizarMovimiento({{'"'.Crypt::encrypt($V->id).'"'.',"Facturar"'}})" class='iconos-estatus tool_editar_inventario'><i class="fa fa-close  icon-DOrden font-icond font-iconrojo"></i></a>
-                  </li>
                 @elseif ($V->codigo != null)
                   <li data-toggle="modal" data-target="#ModalCodigoAceptar">
                     <a data-toggle="tooltip" data-placement="right" title="Ingresar Codigo" style="margin-right: 15px;" class="iconos-estatus tool_editar_inventario" onclick="ModalCodigoAceptarFunc(`{{Crypt::encrypt($V->id)}}`)">
@@ -314,6 +311,12 @@
                 <li>
                   <a style="margin-right: 15px; pointer-events:none;"  onclick=""  class='iconos-estatus tool_editar_inventario'><i class="fa fa-check  icon-DOrden font-icond font-iconrojo"  style="color:green; font-size:28px;"></i></a>
                 </li>
+                @if($usuario_creador == "100953" || $usuario_creador == "100989" || $usuario_creador == "100990" || $usuario_creador == "100954")
+                <li data-toggle="tooltip" data-placement="right" title="Facturar">
+                  <a style="margin-right: 15px;" onclick="ActualizarMovimiento({{'"'.Crypt::encrypt($V->id).'"'.',"Facturar"'}})" class='iconos-estatus tool_editar_inventario'><i class="fa fa-file-text-o  icon-DOrden font-icond font-iconrojo"></i></a>
+                  </li>
+                 @endif
+
               @endif
             </ul>
           </td>

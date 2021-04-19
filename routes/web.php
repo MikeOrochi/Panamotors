@@ -188,7 +188,7 @@ Route::group(['middleware' => 'check.cookies'], function() {
 
 		Route::post('/buscar_acceso_pago','Caja_Chica\BuscarAuxiliaresController@find_acceso_pago')->name('Caja_Chica.validar_user_password_pagos');
 
-		Route::get('/recibo_qr-pdf/{id}','Caja_Chica\MovAuxiliaresController@generar_recibo_pdf_qr')->name('Caja_Chica.recibo_qr_pdf');
+		Route::get('/recibo_qr-pdf','Caja_Chica\MovAuxiliaresController@generar_recibo_pdf_qr')->name('Caja_Chica.recibo_qr_pdf');
 	});
 });
 /////Agregar Rutas Caja Chica
@@ -253,7 +253,7 @@ Route::group(['middleware' => 'check.cookies'], function() {
 		Route::get('/buscar/{search}'            ,['as' => 'vpMovimientoExitoso.search'                             ,'uses' => 'VPMovimientoExitoso\VPMovimientoExitosoController2@search']);
 		Route::post('/guardar/solicitud'         ,['as' => 'vpMovimientoExitoso.storeNewMovement'                   ,'uses' => 'VPMovimientoExitoso\VPMovimientoExitosoController2@storeNewMovement']);
 
-		Route::get('/facturacion'                   ,['as' => 'vpMovimientoExitoso.facturacion'                     ,'uses' => 'VPMovimientoExitoso\FacturacionController@facturacion']);
+		Route::get('/facturacion/{id}'               ,['as' => 'vpMovimientoExitoso.facturacion'                     ,'uses' => 'VPMovimientoExitoso\FacturacionController@facturacion']);
 		Route::post('/busqueda-facturacion'          ,['as' => 'vpMovimientoExitoso.busquedaFacturacion'             ,'uses' => 'VPMovimientoExitoso\FacturacionController@busquedaFacturacion']);
 		Route::post('/busqueda-informacion'          ,['as' => 'vpMovimientoExitoso.busquedaInformacion'             ,'uses' => 'VPMovimientoExitoso\FacturacionController@busquedaInformacion']);
 		Route::post('/guardar_orden'          				,['as' => 'vpMovimientoExitoso.guardar_orden'             		,'uses' => 'VPMovimientoExitoso\FacturacionController@guardar_orden']);

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Caja_Chica;
-
+use App\Http\Controllers\GlobalFunctionsController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\account_status;
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Crypt;
 use Luecano\NumeroALetras\NumeroALetras;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Mpdf\Mpdf; #Php 7.0
+
 class MovAuxiliaresController extends Controller
 {
 	public function __construct(){
@@ -76,14 +79,14 @@ class MovAuxiliaresController extends Controller
 	}
 
 	public function generar_recibo_pdf_qr(){
-		$view=View::make('Caja_Chica.recibo_qr_pdf',compact(
-		'id'));
+		$view=View::make('Caja_Chica.PDF.recibo_qr_pdf',compact('tabla_movimientos','fecha_i','fecha_f', 'fecha_impresion','mes','num_compras_pagadas',
+		'tabla_unidades'));
 
 		$nombre = "PDdsafdfsdfsdF"; $apellidos = "fdsfs dfPDF"; $id_contacto_completo = "949343294";
 
-		GlobalFunctionsController::createPdf($view, $nombre, $apellidos, $id_contacto_completo,"admon_compras", "reporte_ejecutivo_compras","","");
-		return view('Caja_Chica.recibo_qr_pdf',compact(
-				'id'));
+		GlobalFunctionsController::createPdf($view, $nombre, $apellidos, $id_contacto_completo,"admon_compras", "header_nombre_recibo","","");
+		return view('Caja_Chica.PDF.recibo_qr_pdf',compact('tabla_movimientos','fecha_i','fecha_f', 'fecha_impresion','mes','num_compras_pagadas',
+			'tabla_unidades'));
 	}
 	public function edit(){
 	}

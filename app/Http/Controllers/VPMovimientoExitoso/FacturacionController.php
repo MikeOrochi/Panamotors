@@ -45,7 +45,7 @@ class FacturacionController extends Controller {
 
 
   public function facturacion($id){
-    $id = Crypt:decrypt($id);
+    $id = Crypt::decrypt($id);
     $vpme = vista_previa_movimiento_exitoso::where('id', $id)->first();
 
     $inventario = "";
@@ -60,7 +60,8 @@ class FacturacionController extends Controller {
     $empleados = 58;//id_empleado
 
     $nivel_permisos_ordenes = nivel_permisos_ordenes::select('idcatalogo_departamento')->where('idempleado',$empleados)->get();
-    $departamentos=catalogo_departamento::select('idcatalogo_departamento','nombre', 'nomenclatura')->where('visible','SI')->whereIn('idcatalogo_departamento', $nivel_permisos_ordenes)->get();
+    $departamentos=catalogo_departamento::select('idcatalogo_departamento','nombre', 'nomenclatura')->where('visible','SI')->whereIn('idcatalogo_departamento', $nivel_permisos_ordenes)
+                ->where('idcatalogo_departamento','1')->get();
 
     $ids_empleados = ['53','118','116','148','55','4','52'];
     $masters=empleados::whereIn('idempleados',$ids_empleados)->orWhere('departamento','Fuerza de Ventas')->orderBY('nombre','ASC')->get();
@@ -94,7 +95,8 @@ class FacturacionController extends Controller {
       if ($id_category == 3) {
       	$catalogo_tipo_orden=catalogo_tipo_orden::where('idcatalogo_tipo_orden','38')->get();
       } else {
-      	$catalogo_tipo_orden=catalogo_tipo_orden::where('idcatalogo_departamento',$id_category)->get();
+      	$catalogo_tipo_orden=catalogo_tipo_orden::where('idcatalogo_departamento',$id_category)
+        ->where('idcatalogo_tipo_orden','12')->get();
       }
       $option_tipo_orden = "";
       foreach($catalogo_tipo_orden as $value){

@@ -71,6 +71,9 @@ class FacturacionController extends Controller {
     $orden_compra_unidades =orden_compra_unidades::where('estatus','!=','Finalizado')->where('estatus','!=','Cancelado')->where('visible','SI')
                             ->where('procedencia','!=','')->where('estatus_orden','!=','No Negociable')->where('vin',$vpme->vin_numero_serie)->get()->last();
 
+    $refacturacion = check_list_expediente_original::where('vin',$vpme->vin_numero_serie)->where('visible','SI')
+                    ->where('tipo','like','%refactura%')->get();
+    dd($refacturacion);
 
     return view('VPMovimientoExitoso.facturacion', compact('vpme','inventario','empleados','departamentos','masters','orden_compra_unidades'));
   }
@@ -309,13 +312,13 @@ class FacturacionController extends Controller {
                 if ($orden_compra != "N/A" && $refacturacion != "N/A") {
 
                     $resultado201 = orden_compra_unidades::where('visible','SI')->where('idorden_compra_unidades',$orden_compra)->where('vin',$idestado_cuenta)->get();
-                    dd($resultado201, $idestado_cuenta, $refacturacion, $orden_compra);
+                    // dd($resultado201, $idestado_cuenta, $refacturacion, $orden_compra);
                     if (count($resultado201) > 0) {
                         foreach ($resultado201 as $fila201) {
                             $vin_oc = "$fila201->vin";
                         }
 
-                        $resultado200 = at_oc::reateAtencionClientes($noUltimo1X_aux, $orden_compra, 'SI', $idusuario, $fecha_creacion, $fecha_guardado, $tipo_orden);
+                        $resultado200 = at_oc::createAtencionClientes($noUltimo1X_aux, $orden_compra, 'SI', $idusuario, $fecha_creacion, $fecha_guardado, $tipo_orden);
                         $con = 0;
                         $var = count($array_checklist);
                         $tipo_chec = "";

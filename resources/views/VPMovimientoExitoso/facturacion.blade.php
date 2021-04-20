@@ -74,7 +74,7 @@ use App\Http\Controllers\GlobalFunctionsController;
           @csrf
 
           <input type="hidden" name="idVistaPrevia" value="{{Crypt::encrypt($vpme->id)}}">
-          <div class="shadow panel-head-primary" style="margin-bottom:50px;">
+          <div class="shadow panel-head-primary" style="margin-bottom:50px; padding:20px;">
               <h3 class="mt-3 mb-3" style="text-align:center;"><b>Datos VIN</b> </h3>
               <div class="row" style="margin-bottom:15px;">
                   <div class="col-sm-4">
@@ -108,7 +108,7 @@ use App\Http\Controllers\GlobalFunctionsController;
               </div>
           </div>
 
-          <div class="shadow panel-head-primary">
+          <div class="shadow panel-head-primary" style="padding:20px; margin-bottom:50px;">
               <h3 class="mt-3 mb-3" style="text-align:center;"><b>Documentación</b></h3>
               <div class="col-sm-12">
                   <div class="row" style="margin-bottom:30px; display:none;">
@@ -189,7 +189,7 @@ use App\Http\Controllers\GlobalFunctionsController;
               </div>
           </div>
 
-          <div class="shadow panel-head-primary">
+          <div class="shadow panel-head-primary" style="padding:20px;">
               <h3 class="mt-3 mb-3" style="text-align:center;"><b>Buscar Cliente/ID</b></h3>
               <div class="col-sm-12">
                   <div class="row" style="margin-bottom:30px;">
@@ -206,7 +206,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                       </div>
                   </div>
               </div>
-              <div class="col-sm-12" id="" >
+              <div class="col-sm-12" id="" style="margin-bottom:30px;">
                   <div class="row">
                       <div class="col-sm-6 form-group">
                           <label for="">Orden de Compra</label>

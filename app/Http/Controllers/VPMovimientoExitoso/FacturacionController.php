@@ -34,6 +34,7 @@ use App\Models\catalogo_departamento;
 use App\Models\catalogo_colaborador;
 use App\Models\catalogo_tipo_orden;
 use App\Models\atencion_clientes;
+use App\Models\at_oc;
 
 
 
@@ -217,8 +218,6 @@ class FacturacionController extends Controller {
         $vpme = vista_previa_movimiento_exitoso::where('id',$id_vpme)->get()->first();
         $estado_cuenta = estado_cuenta::where('datos_vin',$vpme->vin_numero_serie)->get()->last();
 
-
-
         $usuario_creador=request()->cookie('usuario_clave');//id_empleado
         $fecha_movimiento= date("Y-m-d");
         $fecha_guardado= date("Y-m-d H:i:s");
@@ -315,13 +314,12 @@ class FacturacionController extends Controller {
                 if ($orden_compra != "N/A" && $refacturacion != "N/A") {
 
                     $resultado201 = orden_compra_unidades::where('visible','SI')->where('idorden_compra_unidades',$orden_compra)->where('vin',$idestado_cuenta)->get();
-                    // dd($resultado201, $idestado_cuenta, $refacturacion, $orden_compra);
                     if (count($resultado201) > 0) {
                         foreach ($resultado201 as $fila201) {
                             $vin_oc = "$fila201->vin";
                         }
 
-                        $resultado200 = at_oc::createAtencionClientes($noUltimo1X_aux, $orden_compra, 'SI', $idusuario, $fecha_creacion, $fecha_guardado, $tipo_orden);
+                        $resultado200 = at_oc::createAtOc($noUltimo1X_aux, $orden_compra, 'SI', $idusuario, $fecha_creacion, $fecha_guardado, $tipo_orden);
                         $con = 0;
                         $var = count($array_checklist);
                         $tipo_chec = "";

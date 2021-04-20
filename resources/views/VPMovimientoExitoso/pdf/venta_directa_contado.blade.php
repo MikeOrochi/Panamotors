@@ -572,20 +572,20 @@
                 <td style="text-align:right; ">Modelo:</td>
                 <td style="text-align:left;">@if(!empty($inventario->modelo)){{$inventario->modelo}}@else N/A @endif</td>
 
-                <td style="text-align:right; ">Transmisión:</td>
-                <td style="text-align:left;  ">@if(!empty($inventario->transmision)){{ucfirst(strtolower($inventario->transmision))}}@else N/A @endif</td>
+                <td style="text-align:right;">Transmisión:</td>
+                <td style="text-align:left;">@if(!empty($inventario->transmision)){{ucfirst(strtolower($inventario->transmision))}}@else N/A @endif</td>
 
             </tr>
 
             <tr>
 
-                <td style="text-align:right; width:15%;">Procedencia:</td>
-                <td style="text-align:left;  width:15%;">@if(!empty($vpme->procedencia)){{ucfirst(strtolower($vpme->procedencia))}}@else N/A @endif</td>
+                <td style="text-align:right; width: 15%;">Procedencia:</td>
+                <td style="text-align:left;  width: 15%;">@if(!empty($vpme->procedencia)){{ucfirst(strtolower($vpme->procedencia))}}@else N/A @endif</td>
 
                 @if(!empty($vpme->tipo_unidad))
                 @if($vpme->tipo_unidad != "Unidad")
-                <td style="text-align:right; width:15%;">Número de motor:</td>
-                <td style="text-align:left;  width:15%;"></td>
+                <td style="text-align:right; width: 15%;">Número de motor:</td>
+                <td style="text-align:left;  width: 15%;"></td>
                 @endif
                 @endif
 

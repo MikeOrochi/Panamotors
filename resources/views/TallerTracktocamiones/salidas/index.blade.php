@@ -313,11 +313,7 @@
   </div>
 </div>
 <script type="text/javascript">
-function addMechanic(id) {
-  console.log(id);
-  $("#request_mechanic").val('30');
-  // document.getElementById('request_mechanic').value=id;
-}
+
 $(document).ready(function() {
   $('#stetic_range').change(function() {
     let stetic_range = $("#stetic_range").val();
@@ -594,5 +590,10 @@ function buscar_vin_bloqueado() {
       //... and adds the "active" class to the current step:
       x[n].className += " active";
     }
+    function addMechanic(id) {
+  console.log(id);
+  $("#request_mechanic").val('30');
+  // document.getElementById('request_mechanic').value=id;
+}
     </script>
   @endsection

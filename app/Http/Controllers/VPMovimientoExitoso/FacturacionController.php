@@ -72,10 +72,13 @@ class FacturacionController extends Controller {
                             ->where('procedencia','!=','')->where('estatus_orden','!=','No Negociable')->where('vin',$vpme->vin_numero_serie)->get()->last();
 
     $refacturacion = check_list_expediente_original::where('vin',$vpme->vin_numero_serie)->where('visible','SI')
-                    ->where('tipo','like','%refactura%')->get();
-    dd($refacturacion);
+                    ->where('tipo','like','%refactura%')->where('tipo_check_list','Ingreso')->get();
+    // dd($refacturacion);
+    // if(!$refacturacion->isEmpty())
+    $no_refacturacion = 1;
 
-    return view('VPMovimientoExitoso.facturacion', compact('vpme','inventario','empleados','departamentos','masters','orden_compra_unidades'));
+    return view('VPMovimientoExitoso.facturacion', compact('vpme','inventario','empleados','departamentos','masters',
+                    'orden_compra_unidades','no_refacturacion'));
   }
 
   public function busquedaFacturacion(){

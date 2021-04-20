@@ -111,7 +111,7 @@ use App\Http\Controllers\GlobalFunctionsController;
           <div class="shadow panel-head-primary">
               <h3 class="mt-3 mb-3" style="text-align:center;"><b>Documentación</b></h3>
               <div class="col-sm-12">
-                  <div class="row" style="margin-bottom:30px;">
+                  <div class="row" style="margin-bottom:30px; display:none;">
                       <div class="col-sm-6">
                           <label for="departamento"><b style="color:red;padding-right: 10px;">*</b>Departamento</label>
                           <select id="category" name="asignacion" class="form-control" aria-label="Default select example" required>
@@ -128,7 +128,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                       </div>
                   </div>
                   <div class="row" style="margin-bottom:30px;">
-                      <div class="col-sm-6">
+                      <div class="col-sm-6" style="display:none;">
                           <label for="responsable"><b style="color:red;padding-right: 10px;">*</b>Responsable de seguimiento</label>
                           <select id="responsablex" name="responsable" class="form-control" aria-label="Default select example" required>
                               <option selected>Open this select menu</option>
@@ -136,7 +136,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                           <input type="hidden" name="caso" id="caso" class="form-control" required="" value="N/A">
                           <!-- <input type="hidden" name='responsable' id="colx"> -->
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-6" style="display:none;">
                           <label for="master"><b style="color:red;padding-right: 10px;">*</b>Master</label>
                           <select id="master" name="master" class="form-control" aria-label="Default select example">
                               <!-- <option value="N/A" >N/A</option> -->
@@ -155,7 +155,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                       </div>
                   </div>
                   <div class="row" style="margin-bottom:30px;">
-                      <div class="col-sm-6">
+                      <div class="col-sm-6" style="display:none;">
                           <label for="cargo_abono"><b style="color:red;padding-right: 10px;">*</b>Cargo/Abono</label>
                           <select id="cargo_abono" name="cargo_abono" class="form-control" aria-label="Default select example" required>
                               <option selected>Selecciona una opción</option>
@@ -163,8 +163,9 @@ use App\Http\Controllers\GlobalFunctionsController;
                           <input type="hidden" name='tipo_mov_name' id="tipo_mov_name">
                       </div>
                       <div class="col-sm-6">
+                          <?php $fecha_estimada_solucion = ((new \DateTime(now()))->modify("+2 days"))->format('Y-m-d');?>
                           <label for="fecha_estimada"><b style="color:red;padding-right: 10px;">*</b>Fecha estimada de solución</label>
-                          <input type="date" name="fecha_estimada_solucion" id="fecha_estimada_solucion" class="form-control" required>
+                          <input type="date" name="fecha_estimada_solucion" id="fecha_estimada_solucion" value="{{$fecha_estimada_solucion}}"class="form-control" required>
                       </div>
                   </div>
                   <div class="row" style="margin-bottom:30px;">
@@ -231,16 +232,7 @@ use App\Http\Controllers\GlobalFunctionsController;
                       <div class="col-sm-6 form-group" >
                           <label for="">No. Refacturación</label>
                           <select name="refacturacion" id="refacturacion" class="form-control">
-                              <option value="">Seleccione opción...</option>
-                              <option value="N/A">N/A</option>
-                              <?php
-                              $con = 1;
-                              $var = 20;
-                              while ($con <= $var) {
-                                  echo '<option value="'.$con.'">'.$con.'</option>';
-                                  $con++;
-                              }
-                              ?>
+                              <option value="{{$no_refacturacion}}">{{$no_refacturacion}}</option>
                           </select>
                       </div>
                   </div>

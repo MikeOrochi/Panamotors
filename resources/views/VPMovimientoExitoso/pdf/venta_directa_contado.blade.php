@@ -549,17 +549,17 @@
 
         <table class="tablax tablaxdprincipales" style="font-size:11px;">
             <tr>
-                <td colspan="6">Características de la unidad materia de la compra – venta:</td>
+                <td colspan="6" style="padding-bottom: 10px; border-bottom: 1px solid #c3c7cc;">Características de la unidad materia de la compra – venta:</td>
             </tr>
             <tr>
-                <td style="text-align:right; width:16%; background: yellow;">Tipo:</td>
-                <td style="text-align:left; width:16%; background: green;">@if(!empty($vpme->tipo_unidad)){{$vpme->tipo_unidad}}@else N/A @endif</td>
+                <td style="text-align:right; width:15%;">Tipo:</td>
+                <td style="text-align:left; width:15%;">@if(!empty($vpme->tipo_unidad)){{$vpme->tipo_unidad}}@else N/A @endif</td>
 
-                <td style="text-align:right; width:16%; background: aqua;">Número de serie:</td>
-                <td style="text-align:left;  width:16%; background: red;">@if(!empty($inventario_dinamico->contenido)){{$inventario_dinamico->contenido}}@else N/A @endif</td>
+                <td style="text-align:right; width:15%;">Número de serie:</td>
+                <td style="text-align:left;  width:15%;">@if(!empty($inventario_dinamico->contenido)){{$inventario_dinamico->contenido}}@else N/A @endif</td>
 
-                <td style="text-align:right; width:16%; background: blue;">Marca:</td>
-                <td style="text-align:left; width:16%; background: pink;">@if(!empty($inventario->marca)){{$inventario->marca}}@else N/A @endif</td>
+                <td style="text-align:right; width:15%;">Marca:</td>
+                <td style="text-align:left; width:15%;">@if(!empty($inventario->marca)){{$inventario->marca}}@else N/A @endif</td>
             </tr>
             <tr>
                 <td style="text-align:right;" colspan="1">Versi&oacute;n:</td>
@@ -603,8 +603,8 @@
 
         <table class="tablax tablaxdprincipales" style="font-size:11px;">
             <tr>
-                <td colspan="2" style="width:50%;">VENDEDOR</td>
-                <td colspan="2" style="width:50%;">COMPRADOR</td>
+                <td colspan="2" style="width:50%; padding-bottom: 10px; border-bottom: 1px solid #c3c7cc;">VENDEDOR</td>
+                <td colspan="2" style="width:50%; padding-bottom: 10px; border-bottom: 1px solid #c3c7cc;">COMPRADOR</td>
             </tr>
             <tr>
                 <td style="text-align:right; width:20%;">Nombre:</td>

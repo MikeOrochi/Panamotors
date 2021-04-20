@@ -86,7 +86,7 @@ class BuscarAuxiliaresController extends Controller
 			if (Empty($atencion_clientes)) {
 				$auxiliar->at="NO";
 				$auxiliar->estatus_orden="NO";
-				if (\Auth::user()->idempleados == 88 || \Auth::user()->idempleados == 78) {
+				if (\Auth::user()->idempleados == 88 || \Auth::user()->idempleados == 78 || \Auth::user()->idempleados == 91) {
 					$auxiliar->estatus_password_modal="Admin";
 				}else{
 					if (Empty($empleados_pass_auxliares_pagos)) {
@@ -100,7 +100,7 @@ class BuscarAuxiliaresController extends Controller
 				$auxiliar->at="SI";
 				$auxiliar->estatus_orden=$atencion_clientes->estatus;
 				$auxiliar->id_orden_at=$atencion_clientes->idatencion_clientes;
-				if (\Auth::user()->idempleados == 88 || \Auth::user()->idempleados == 78) {
+				if (\Auth::user()->idempleados == 88 || \Auth::user()->idempleados == 78 || \Auth::user()->idempleados == 91) {
 					$auxiliar->estatus_password_modal="Admin";
 				}else{
 					if (Empty($empleados_pass_auxliares_pagos)) {

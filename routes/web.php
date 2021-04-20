@@ -184,11 +184,13 @@ Route::group(['middleware' => 'check.cookies'], function() {
 		Route::post('/find_provider', 'Caja_Chica\MovAuxiliaresController@find_provider')->name('Caja_Chica.find_provider');
 
 		Route::post('/buscar_auxiliares_tokenfield','Caja_Chica\MovAuxiliaresController@auxiliares_tokenfield')->name('Caja_Chica.auxiliares_tokenkenfield');
-		Route::get('/resumen_abonos_estado_cuenta_requisicion/{idecr}/{aux}','Caja_Chica\ResumenAbonosEstadoController@index')->name('Caja_Chica.resumen_abonos_estado_cuenta_requisicion');
+		Route::get('/resumen_abonos_estado_cuenta_requisicion/{idecr}/{aux}','Caja_Chica\ResumenAbonosEstadoController@inicio')->name('Caja_Chica.resumen_abonos_estado_cuenta_requisicion');
 
 		Route::post('/buscar_acceso_pago','Caja_Chica\BuscarAuxiliaresController@find_acceso_pago')->name('Caja_Chica.validar_user_password_pagos');
 
-		Route::get('/recibo_qr-pdf','Caja_Chica\MovAuxiliaresController@generar_recibo_pdf_qr')->name('Caja_Chica.recibo_qr_pdf');
+		Route::get('/recibo_qr-pdf/{id}','Caja_Chica\MovAuxiliaresController@generar_recibo_pdf_qr')->name('Caja_Chica.recibo_qr_pdf');
+
+		Route::get('/agregar_requisicion_abono/{idecr}/{aux}','Caja_Chica\ResumenAbonosEstadoController@agregar_abono_especifico')->name('Caja_Chica.agregar_requisicion_abono');
 	});
 });
 /////Agregar Rutas Caja Chica

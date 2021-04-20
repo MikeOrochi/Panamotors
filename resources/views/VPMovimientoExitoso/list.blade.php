@@ -288,7 +288,7 @@
               <li data-toggle="tooltip" data-placement="right" title="Complementar información del cliente">
                 <a  style="margin-right: 15px;"  onclick="ActualizarMovimiento({{'"'.Crypt::encrypt($V->id).'"'.',"Complementar"'}})"  class='iconos-estatus tool_editar_inventario'><i class="fa fa-plus  icon-DOrden font-icond font-iconrojo"></i></a>
               </li>
-              @if($usuario_creador == "100953" || $usuario_creador == "100989" || $usuario_creador == "100990" || $usuario_creador == "100954")
+              @if($usuario_creador = "100953" || $usuario_creador == "100989" || $usuario_creador == "100990" || $usuario_creador == "100954")
                 <li data-toggle="modal" data-target="#ModalCodigo">
                   <a data-toggle="tooltip" data-placement="right" title="Generar Codigo" style="margin-right: 15px;" class='iconos-estatus tool_editar_inventario' onclick="ModalCodigoFunc(`{{Crypt::encrypt($V->id)}}`)">
                     <i class="fas fa-user-tie icon-DOrden font-icond font-iconrojo"></i>
